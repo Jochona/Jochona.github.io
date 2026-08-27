@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-27T20:06:13Z",
+  "title": "Design System: Jochona",
+  "extensions": {
+    "colorMeta": {
+      "trail-100": { "role": "primary", "displayName": "Orbital Trail", "canonical": "#54ead0", "tonalRamp": ["#0f3d38", "#1f6b60", "#54ead0", "#9df5e4"] },
+      "brass-100": { "role": "secondary", "displayName": "Instrument Brass", "canonical": "#caa356", "tonalRamp": ["#8a713c", "#caa356", "#e3c07f"] },
+      "navy-050": { "role": "neutral", "displayName": "Deep Space Navy", "canonical": "#0a1526", "tonalRamp": ["#060b16", "#0a1526", "#0e1c33", "#132441", "#1b2f52"] },
+      "ink-000": { "role": "neutral", "displayName": "Parchment White", "canonical": "#f3f0e8" },
+      "danger-100": { "role": "warning", "displayName": "Caution Amber", "canonical": "#e2a05c" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only." },
+      "headline": { "displayName": "Headline", "purpose": "Section h2." },
+      "title": { "displayName": "Title", "purpose": "Waypoint, log, and component h3." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, max 68ch measure." },
+      "label": { "displayName": "Label / Mono", "purpose": "Diegetic instrument readouts: specs, coordinates, log marks, button text." }
+    },
+    "shadows": [
+      { "name": "mark-glow", "value": "drop-shadow(0 0 22px rgba(84, 234, 208, 0.22))", "purpose": "Instrument backlight behind the hero brand mark only; not a general elevation token." }
+    ],
+    "motion": [
+      { "name": "plot-draw", "value": "stroke-dashoffset 1.4s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "One-shot draw-in of the hero's plotted course lines on load. Disabled under prefers-reduced-motion (end state shown immediately)." }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "900px" },
+      { "name": "mobile", "value": "720px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single filled action per view; cyan trail background.",
+      "html": "<a class=\"btn btn--trail\" href=\"#\">Get development builds</a>",
+      "css": ".btn--trail { border-color: var(--trail-100); color: var(--navy-000); background: var(--trail-100); font-weight: 600; } .btn--trail:hover { background: var(--trail-200); border-color: var(--trail-200); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Default secondary action; transparent with a dim border.",
+      "html": "<a class=\"btn btn--ghost\" href=\"#\">See how it connects</a>",
+      "css": ".btn--ghost { border-color: rgba(154, 171, 192, 0.4); color: var(--ink-100); }"
+    },
+    {
+      "name": "Instrument Panel",
+      "kind": "card",
+      "refersTo": "caution-panel",
+      "description": "Full 1px-bordered panel used for the identity-change callout and the downloads block; never a colored left border.",
+      "html": "<div class=\"caution-panel\"><span class=\"tag mono\">HARD STOP</span><p>...</p></div>",
+      "css": ".caution-panel { border: 1px solid rgba(202, 163, 86, 0.28); padding: 1.8rem; background: rgba(19, 36, 65, 0.4); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Night Navigation Chart",
+    "overview": "Jochona's marketing surface reads as a celestial/nautical navigation chart, not a SaaS dashboard. A homelab owner plots one short course: device, network, host, the way a navigator plots a bearing. An instrument bezel with ticks, a plotted line that draws in once, and small mono coordinate readouts stand in for data the product can actually prove, never invented metrics. The crescent-and-orbital-trail brand mark is the astrolabe at the center of the hero.",
+    "keyCharacteristics": [
+      "Deep navy ground chosen for the use scene (living room / desk at night)",
+      "Brass-gold instrument linework for structure; cyan reserved for live/active state and the primary action",
+      "Mono readouts used only where they carry real information",
+      "One authored motion moment: the hero plot line draws in once on load"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Cyan is the only saturated, high-chroma color on the page, marking exactly one thing per view: live/active state or the primary action.", "section": "colors" },
+      { "name": "The Diegetic Label Rule", "body": "Every mono label belongs to the chart's own instrument (a bearing, a spec, a log mark); no mono label is used as a page-wide kicker.", "section": "typography" },
+      { "name": "The No-Card Rule", "body": "No component gets a background box, radius, or shadow to read as a card; grouping uses shared bezels, dividers, and continued plotted lines.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reserve cyan for exactly one job per view.",
+      "Do keep mono labels diegetic to the chart.",
+      "Do use full 1px borders for panels, never a colored border-left/right heavier than 1px.",
+      "Do keep motion to one authored moment per view and respect prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't add a kicker/eyebrow label above any heading.",
+      "Don't put icon+heading+text into an elevated card shell.",
+      "Don't round any corner.",
+      "Don't introduce a second saturated accent color."
+    ]
+  }
+}

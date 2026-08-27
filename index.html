@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jochona — plot a straight line to your own PC</title>
+<meta name="description" content="Jochona is a local-first game-streaming client for Sunshine, Apollo, and Vibepollo hosts you run yourself. No account, no cloud relay, controller-first. In active development." />
+<meta property="og:title" content="Jochona — plot a straight line to your own PC" />
+<meta property="og:description" content="A local-first game-streaming client for hosts you run yourself. No account, no cloud relay." />
+<meta property="og:image" content="/assets/brand/hero-wide.png" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#060b16" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="256x256" href="/assets/brand/favicon-256.png" />
+<link rel="apple-touch-icon" href="/assets/brand/favicon-256.png" />
+<link rel="stylesheet" href="/assets/fonts/fonts.css" />
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+<!--
+  THESIS: A local-first streaming client's marketing page should read as a
+  navigation chart you plot yourself, not another SaaS dashboard mockup with
+  a floating laptop.
+  OWN-WORLD: Night-sky navy ground; brass-gold plotted lines and instrument
+  caps; one cyan orbital-trail accent marks live/active state; Space
+  Grotesk display, Inter body, IBM Plex Mono bearing/coordinate readouts;
+  the crescent brand mark as the astrolabe centerpiece.
+  STORY: A homelab owner sees their own device and their own host joined by
+  one plotted course, understands there is no cloud waypoint in between, and
+  reaches for development builds on GitHub since no stable release exists yet.
+  FIRST VIEWPORT: Full-bleed navy chart ground; astrolabe brand mark left,
+  orbital trail arcing right to a labeled HOST waypoint; headline states the
+  local-first course; primary action sits on the plotted line.
+  FORM: Night Navigation Chart — celestial/nautical wayfinding grammar;
+  candidate 6 of 7 grounded directions; concept-seed key 84752da2.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the
+  finish review, the verdict, and DESIGN.md.
+-->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap topbar-row">
+    <a class="brand" href="#hero">
+      <img src="/assets/brand/logo-mark-light.webp" alt="" width="28" height="28" />
+      Jochona
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links" id="primary-nav">
+        <li><a href="#course">What it is</a></li>
+        <li><a href="#platforms">Platforms</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#principles">Principles</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn--ghost" href="https://github.com/Jochona/jochona-client">GitHub</a>
+      <a class="btn btn--trail" href="#get-it">Get development builds</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Plot a straight line from your device to <em>your own PC</em>.</h1>
+        <p class="lede">
+          Jochona is a game-streaming client for Sunshine, Apollo, and
+          Vibepollo hosts you run yourself: no account, no cloud relay,
+          just the plotted course to your own network.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--trail" href="https://github.com/Jochona/jochona-client">Get development builds</a>
+          <a class="btn btn--ghost" href="#course">See how it connects</a>
+        </div>
+        <p class="hero-note">In active development: builds ship via CI, and there is no tagged release yet.</p>
+      </div>
+
+      <figure class="chart-figure" aria-hidden="true">
+        <img class="chart-mark" src="/assets/brand/logo-mark-light.webp" alt="" />
+        <svg viewBox="0 0 520 520" role="presentation">
+          <g stroke="var(--brass-100)" stroke-width="1" opacity="0.45">
+            <line x1="260.0" y1="58.0" x2="260.0" y2="40.0" />
+            <line x1="314.6" y1="56.2" x2="316.9" y2="47.5" />
+            <line x1="365.5" y1="77.3" x2="370.0" y2="69.5" />
+            <line x1="409.2" y1="110.8" x2="415.6" y2="104.4" />
+            <line x1="442.7" y1="154.5" x2="450.5" y2="150.0" />
+            <line x1="463.8" y1="205.4" x2="472.5" y2="203.1" />
+            <line x1="462.0" y1="260.0" x2="480.0" y2="260.0" />
+            <line x1="463.8" y1="314.6" x2="472.5" y2="316.9" />
+            <line x1="442.7" y1="365.5" x2="450.5" y2="370.0" />
+            <line x1="409.2" y1="409.2" x2="415.6" y2="415.6" />
+            <line x1="365.5" y1="442.7" x2="370.0" y2="450.5" />
+            <line x1="314.6" y1="463.8" x2="316.9" y2="472.5" />
+            <line x1="260.0" y1="462.0" x2="260.0" y2="480.0" />
+            <line x1="205.4" y1="463.8" x2="203.1" y2="472.5" />
+            <line x1="154.5" y1="442.7" x2="150.0" y2="450.5" />
+            <line x1="110.8" y1="409.2" x2="104.4" y2="415.6" />
+            <line x1="77.3" y1="365.5" x2="69.5" y2="370.0" />
+            <line x1="56.2" y1="314.6" x2="47.5" y2="316.9" />
+            <line x1="58.0" y1="260.0" x2="40.0" y2="260.0" />
+            <line x1="56.2" y1="205.4" x2="47.5" y2="203.1" />
+            <line x1="77.3" y1="154.5" x2="69.5" y2="150.0" />
+            <line x1="110.8" y1="110.8" x2="104.4" y2="104.4" />
+            <line x1="154.5" y1="77.3" x2="150.0" y2="69.5" />
+            <line x1="205.4" y1="56.2" x2="203.1" y2="47.5" />
+          </g>
+          <circle cx="260" cy="260" r="220" fill="none" stroke="var(--brass-100)" stroke-width="1" opacity="0.32" />
+          <circle cx="260" cy="260" r="168" fill="none" stroke="var(--brass-050)" stroke-width="1" stroke-dasharray="3 7" opacity="0.5" />
+
+          <path class="plot-line" d="M211.4,301.7 C160,340 140,360 120,380" fill="none" stroke="var(--trail-100)" stroke-width="1.8" stroke-linecap="round" />
+          <path class="plot-line" d="M310.8,221.2 C400,200 440,170 430,130" fill="none" stroke="var(--trail-100)" stroke-width="1.8" stroke-linecap="round" />
+
+          <circle cx="120" cy="380" r="5" fill="var(--navy-050)" stroke="var(--trail-100)" stroke-width="2" />
+          <circle cx="430" cy="130" r="5" fill="var(--navy-050)" stroke="var(--trail-100)" stroke-width="2" />
+
+          <text x="97" y="402" text-anchor="end" font-family="var(--font-mono)" font-size="12" fill="var(--ink-100)">YOU</text>
+          <text x="505" y="118" text-anchor="end" font-family="var(--font-mono)" font-size="12" fill="var(--ink-100)">HOST</text>
+          <text x="505" y="134" text-anchor="end" font-family="var(--font-mono)" font-size="9" fill="var(--ink-300)">capability-aware</text>
+        </svg>
+        <figcaption class="chart-caption"><span class="rule"></span> device → host, one hop, no waypoint between</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="course">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>The course</h2>
+        <span class="bearing mono">three legs, one connection</span>
+      </div>
+      <p class="section-intro">
+        Every stream follows the same short course: your device, your
+        network, your host. Nothing routes through a server in between.
+      </p>
+
+      <div class="course-plot">
+        <div class="waypoint">
+          <div class="waypoint-head">
+            <h3>Your device</h3>
+            <span class="coord mono">· any OS</span>
+          </div>
+          <p>Windows, macOS, Linux, or a Steam Deck docked to the TV. Controller-first navigation means every ordinary workflow works without a keyboard or mouse.</p>
+        </div>
+        <div class="waypoint">
+          <div class="waypoint-head">
+            <h3>Your network</h3>
+            <span class="coord mono">· LAN or Tailscale</span>
+          </div>
+          <p>Stream over your LAN, or reach a host through a private overlay like Tailscale. Wake-on-LAN starts a sleeping host, even when its cached MAC address has gone stale.</p>
+        </div>
+        <div class="waypoint">
+          <div class="waypoint-head">
+            <h3>Your host</h3>
+            <span class="coord mono">· capability-aware</span>
+          </div>
+          <p>Sunshine, Apollo, or Vibepollo. Jochona reads what each host actually supports, from Apollo's probe fields to Vibepollo's declarative capability endpoint, and shows only the features that host has.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="platforms">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Platforms</h2>
+        <span class="bearing mono">where it runs</span>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="bearing-strip">
+        <div class="bearing-stop">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="4" y="4" width="10" height="10" rx="1.5" />
+            <rect x="18" y="4" width="10" height="10" rx="1.5" />
+            <rect x="4" y="18" width="10" height="10" rx="1.5" />
+            <rect x="18" y="18" width="10" height="10" rx="1.5" />
+          </svg>
+          <h3>Windows</h3>
+          <span class="spec">11 · x64</span>
+        </div>
+        <div class="bearing-stop">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="8" y="8" width="16" height="16" rx="2" />
+            <line x1="12" y1="8" x2="12" y2="4" />
+            <line x1="20" y1="8" x2="20" y2="4" />
+            <line x1="12" y1="24" x2="12" y2="28" />
+            <line x1="20" y1="24" x2="20" y2="28" />
+            <line x1="8" y1="12" x2="4" y2="12" />
+            <line x1="8" y1="20" x2="4" y2="20" />
+            <line x1="24" y1="12" x2="28" y2="12" />
+            <line x1="24" y1="20" x2="28" y2="20" />
+          </svg>
+          <h3>macOS</h3>
+          <span class="spec">14+ · Apple Silicon</span>
+        </div>
+        <div class="bearing-stop">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="3" y="6" width="26" height="20" rx="2" />
+            <path d="M9,13 L14,16 L9,19" fill="none" />
+            <line x1="16" y1="21" x2="22" y2="21" />
+          </svg>
+          <h3>Linux</h3>
+          <span class="spec">x86-64 · AppImage / Flatpak</span>
+        </div>
+        <div class="bearing-stop">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="5" y="11" width="22" height="13" rx="6" />
+            <circle cx="11" cy="17.5" r="2.4" />
+            <circle cx="21" cy="17.5" r="2.4" />
+            <circle cx="24.5" cy="14.5" r="1" />
+            <circle cx="24.5" cy="20.5" r="1" />
+          </svg>
+          <h3>Steam Deck</h3>
+          <span class="spec">handheld · docked or on the go</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="security">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Nothing between you and your host.</h2>
+        <span class="bearing mono">local by construction</span>
+      </div>
+
+      <div class="anchor-grid">
+        <div class="anchor-copy">
+          <p>Jochona talks straight to hosts you run. There's nothing in between to trust: every host you pair with is remembered on your device, and nothing syncs to a server, because there is no server.</p>
+          <p>Secrets never touch a database or a plain-text config file. They live in your OS's own credential vault:</p>
+          <ul class="vault-list">
+            <li><span>macOS</span><span>Keychain</span></li>
+            <li><span>Windows</span><span>DPAPI</span></li>
+            <li><span>Linux</span><span>libsecret</span></li>
+          </ul>
+        </div>
+
+        <div class="caution-panel">
+          <span class="tag mono">HARD STOP</span>
+          <p>If a paired host's identity changes (a reinstalled Sunshine, a swapped machine behind the same address), Jochona halts the connection until you deliberately re-pair, with no silent continue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Principles</h2>
+        <span class="bearing mono">what governs the build</span>
+      </div>
+
+      <ul class="log-list">
+        <li class="log-entry">
+          <span class="mark">»</span>
+          <div>
+            <h3>Excellent defaults, visible control.</h3>
+            <p>Sensible settings out of the box, every one of them reachable and changeable.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="mark">»</span>
+          <div>
+            <h3>Controller-first, not controller-only.</h3>
+            <p>Every ordinary workflow works with a gamepad from the couch. Keyboard and mouse still work too.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="mark">»</span>
+          <div>
+            <h3>Direct by default.</h3>
+            <p>The interface is driven by what your host can actually do, never by guessing a version string.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="mark">»</span>
+          <div>
+            <h3>Recover rather than fail.</h3>
+            <p>Diagnostics point at the likely cause instead of leaving you with a dead connection.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="mark">»</span>
+          <div>
+            <h3>Local ownership.</h3>
+            <p>No account, no cloud dependency. Secrets stay in your OS's own vault.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="get-it">
+    <div class="wrap downloads">
+      <div class="downloads-panel">
+        <div>
+          <h2>Get development builds</h2>
+          <p>Jochona is in active development, so there's no tagged release yet. Every push to <code class="mono">main</code> builds automatically through CI; grab the latest artifact from the repository, or watch for the first tagged release.</p>
+        </div>
+        <div class="downloads-actions">
+          <a class="btn btn--trail" href="https://github.com/Jochona/jochona-client">View the repository</a>
+          <a class="btn btn--ghost" href="https://github.com/Jochona/jochona-client/actions">Browse CI builds</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-row">
+    <p class="footer-attrib">
+      Derived from <a href="https://github.com/moonlight-stream/moonlight-qt">Moonlight Qt</a>
+      (GPL-3.0), © moonlight-stream contributors. Jochona is licensed GPL-3.0
+      with full upstream history preserved. © 2026 Jochona.
+    </p>
+    <ul class="footer-links">
+      <li><a href="https://jochona.com">jochona.com</a></li>
+      <li><a href="https://github.com/Jochona/jochona-client">GitHub</a></li>
+      <li><a href="https://github.com/Jochona/jochona-client/blob/main/LICENSE">GPL-3.0</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="/app.js"></script>
+</body>
+</html>
