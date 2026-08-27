@@ -43,8 +43,9 @@
 
   var visual = document.querySelector(".direct-visual");
   var canvas = document.querySelector("[data-signal-field]");
+  var beam = document.querySelector(".beam--core");
 
-  if (!visual || !canvas) return;
+  if (!visual || !canvas || !beam) return;
 
   var context = canvas.getContext("2d", { alpha: true });
   if (!context) return;
@@ -90,16 +91,20 @@
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    route = routeCoordinates();
     draw(performance.now());
   }
 
+  var route = null;
+
   function routeCoordinates() {
-    var portrait = width / height < 1.05;
+    var visualBounds = visual.getBoundingClientRect();
+    var beamBounds = beam.getBoundingClientRect();
     return {
-      x1: width * (portrait ? 0.032 : 0.11),
-      y1: height * 0.758,
-      x2: width * (portrait ? 0.968 : 0.89),
-      y2: height * 0.242
+      x1: beamBounds.left - visualBounds.left,
+      y1: beamBounds.bottom - visualBounds.top,
+      x2: beamBounds.right - visualBounds.left,
+      y2: beamBounds.top - visualBounds.top
     };
   }
 
@@ -118,7 +123,7 @@
       context.fill();
     }
 
-    var route = routeCoordinates();
+    if (!route) route = routeCoordinates();
     var speed = reduceMotion.matches ? 0 : elapsed * 0.19;
 
     context.save();
@@ -183,20 +188,6 @@
     reduceMotion.addEventListener("change", syncAnimation);
   }
 
-  if (window.matchMedia("(pointer: fine)").matches && !reduceMotion.matches) {
-    visual.addEventListener("pointermove", function (event) {
-      var bounds = visual.getBoundingClientRect();
-      var horizontal = (event.clientX - bounds.left) / bounds.width - 0.5;
-      var vertical = (event.clientY - bounds.top) / bounds.height - 0.5;
-      visual.style.setProperty("--tilt-x", (-vertical * 1.8).toFixed(2) + "deg");
-      visual.style.setProperty("--tilt-y", (horizontal * 2.2).toFixed(2) + "deg");
-    });
-
-    visual.addEventListener("pointerleave", function () {
-      visual.style.setProperty("--tilt-x", "0deg");
-      visual.style.setProperty("--tilt-y", "0deg");
-    });
-  }
 
   resizeCanvas();
   window.requestAnimationFrame(function () {

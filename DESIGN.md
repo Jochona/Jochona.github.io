@@ -2,42 +2,43 @@
 name: Jochona
 description: Local-first game streaming to your own PC
 colors:
-  navy-000: "#060b16"
-  navy-050: "#0a1526"
-  navy-100: "#0e1c33"
-  navy-150: "#132441"
-  navy-200: "#1b2f52"
+  navy-000: "#030710"
+  navy-025: "#060b16"
+  navy-050: "#081426"
+  navy-100: "#0d1d35"
+  navy-150: "#132b4c"
+  navy-200: "#1b3b61"
   brass-050: "#8a713c"
   brass-100: "#caa356"
   brass-200: "#e3c07f"
   trail-100: "#54ead0"
   trail-200: "#9df5e4"
-  ink-000: "#f3f0e8"
-  ink-100: "#cdd6e2"
-  ink-200: "#9aabc0"
-  ink-300: "#7b91a8"
+  ink-000: "#f6f4ed"
+  ink-100: "#d6e0ec"
+  ink-200: "#a8b9cb"
+  ink-300: "#8399af"
   danger-100: "#e2a05c"
 typography:
   display:
     fontFamily: "Space Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(2.4rem, 4.6vw, 3.6rem)"
+    fontSize: "clamp(3.1rem, 5.2vw, 4.7rem)"
     fontWeight: 600
-    lineHeight: 1.06
-    letterSpacing: "-0.02em"
+    lineHeight: 0.98
+    letterSpacing: "-0.038em"
   headline:
     fontFamily: "Space Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(1.6rem, 2.6vw, 2.1rem)"
+    fontSize: "clamp(2.4rem, 4.4vw, 4.2rem)"
     fontWeight: 600
-    lineHeight: 1.15
-    letterSpacing: "-0.02em"
+    lineHeight: 1
+    letterSpacing: "-0.035em"
   body:
     fontFamily: "Inter, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.6
   label:
     fontFamily: "IBM Plex Mono, ui-monospace, monospace"
-    fontSize: "0.8rem"
+    fontSize: "0.84rem"
     letterSpacing: "0.02em"
 rounded:
   none: "0px"
@@ -51,111 +52,192 @@ components:
     backgroundColor: "{colors.trail-100}"
     textColor: "{colors.navy-000}"
     typography: "{typography.label}"
-    padding: "0.65em 1.1em"
+    padding: "0.78rem 1.15rem"
   button-primary-hover:
     backgroundColor: "{colors.trail-200}"
-  button-ghost:
+  button-secondary:
     backgroundColor: "transparent"
     textColor: "{colors.ink-000}"
     typography: "{typography.label}"
-    padding: "0.65em 1.1em"
+    padding: "0.78rem 1.15rem"
 ---
 
 # Design System: Jochona
 
 ## Overview
 
-**Creative North Star: "The Night Navigation Chart"**
+**Creative North Star: "The Direct Signal"**
 
-Jochona's marketing surface reads as a celestial/nautical navigation chart, not a SaaS dashboard. A homelab owner plots one short course — device, network, host — the way a navigator plots a bearing: an instrument bezel with ticks, a plotted line with a hard, single-shot draw-in, and small mono coordinate readouts standing in for data the product can actually prove (capability-aware, LAN or Tailscale) rather than invented metrics. The crescent-and-orbital-trail brand mark is the astrolabe at the center of the hero, not a corner logo.
+One straight cyan beam crossing a night sky is the whole idea: your device on
+one end, your PC on the other, nothing in between. The hero draws that beam
+once — literally, as the page's single authored motion — and every later
+section is a station along the same signal: the connect track's plotted line,
+the glowing line arriving into the downloads panel. The visual world is the
+scene the product lives in (a dark living room, a homelab at night), rendered
+as night-sky imagery, drifting starfield, and hard-edged instrument furniture.
 
-Confirmed rejections: no floating-laptop dashboard hero, no gradient-text hype, no icon+heading+text card grid, no kicker/eyebrow labels above headings, no fabricated benchmarks or testimonials (the product is pre-release and the copy says so).
+Voice is **warm and direct** — a person explaining the product to a friend.
+Sentences carry a subject and a verb; no fragment-fragment punchline cadence,
+no invented metrics, no testimonials. The product is pre-release and the copy
+says so plainly.
+
+Confirmed rejections: no floating-laptop dashboard hero, no gradient text, no
+icon+heading+text card grid, no kicker/eyebrow labels above headings, no
+fabricated benchmarks or user counts.
 
 **Key Characteristics:**
-- Deep navy ground, chosen for the scene (a living-room TV / desk at night, low ambient light — the audience this product serves).
-- Brass-gold instrument linework for structure (bezels, dividers, buttons); one cyan "orbital trail" accent reserved for live/active state and primary actions.
-- Mono readouts (IBM Plex Mono) used only where they carry real information: platform specs, connection legs, log marks.
-- Motion is a single authored moment (the hero plot line draws in once on load), not scattered hover effects.
+- Deep navy night ground, chosen for the use scene (TV or desk at night, low
+  ambient light).
+- One committed accent: cyan "trail" is the signal itself and the primary
+  action, nothing else.
+- Brass carries quiet structure: hairline dividers, meta labels, platform
+  icon strokes. It never competes with cyan for attention.
+- Motion is the beam drawing in once, plus a quiet ambient layer (star
+  twinkle, signal particles riding the beam, endpoint pulses breathing).
 
 ## Colors
 
-Restrained navy ground with one committed neon accent (cyan "trail") and a secondary warm instrument color (brass) that carries structure, not emphasis.
-
 ### Primary
-- **Orbital Trail** (`#54ead0`): the one neon accent. Reserved for the primary CTA, the live/active plotted line, waypoint nodes, and links. Never used for body text at length.
+- **Signal Trail** (`#54ead0` / bright `#9df5e4`): the beam, its particles and
+  endpoint rings, the route label, the primary CTA, focus outlines, and the
+  live status dot. Never headline decoration, never body text.
 
 ### Secondary
-- **Instrument Brass** (`#caa356` / hover `#e3c07f` / dim `#8a713c`): all structural linework — bezels, dividers (`--rule`), buttons' default border, section tags, log marks are the exception (those use trail). Brass reads as "the chart's own ink," not a second call-to-action color.
+- **Instrument Brass** (`#caa356` / bright `#e3c07f` / dim `#8a713c`): the
+  page's structural ink — hairline rules (`--rule` at 24% opacity), mono meta
+  labels, secondary-button hover, platform icon strokes. Structure, not
+  emphasis.
 
 ### Neutral
-- **Deep Space Navy** (`#060b16` navy-000, `#0a1526` navy-050 page ground, `#0e1c33`–`#1b2f52` panel steps): grounds and panels, darkest to lightest.
-- **Parchment White** (`#f3f0e8`): headings.
-- **Chart Ink** (`#cdd6e2` ink-100 body, `#9aabc0` ink-200 secondary copy, `#7b91a8` ink-300 captions/mono labels): body text tinted from the navy hue, never pure gray. ink-300 is the contrast floor at 5.6:1 on navy-050.
-- **Caution Amber** (`#e2a05c`): the single "HARD STOP" tag on the identity-change callout. Not used elsewhere — its rarity is what marks it as a warning.
+- **Night Navy** (`#030710` panels, `#060b16` page ground, `#081426`–`#1b3b61`
+  raised steps): all grounds.
+- **Parchment White** (`#f6f4ed`): headings and high-emphasis labels.
+- **Signal Ink** (`#d6e0ec` body, `#a8b9cb` secondary, `#8399af` captions):
+  body text tinted from the navy hue, never pure gray.
+- **Caution Amber** (`#e2a05c`): reserved for the single host-identity
+  warning panel. Its rarity is what marks it as a warning.
 
 ### Named Rules
-**The One Accent Rule.** Cyan (`trail-100`) is the only saturated, high-chroma color on the page. It marks exactly one thing: what's live, active, or the primary action. Brass never competes with it for that job.
+**The Signal Rule.** Cyan means exactly two things: the live signal (beam,
+particles, pulses, status) and the primary action. If an element is neither,
+it does not get cyan. Headline emphasis, list values, and decorative
+gradients are all violations.
 
 ## Typography
 
-**Display Font:** Space Grotesk (with system-ui fallback)
-**Body Font:** Inter (with system-ui fallback)
-**Label/Mono Font:** IBM Plex Mono (with ui-monospace fallback)
-
-**Character:** Space Grotesk's geometric, slightly technical character carries the instrument-panel voice at display size; Inter stays plain and legible for reading; IBM Plex Mono is reserved for anything that reads as measured data — coordinates, specs, log marks.
+**Display Font:** Space Grotesk (self-hosted, system-ui fallback)
+**Body Font:** Inter (self-hosted, system-ui fallback)
+**Label/Mono Font:** IBM Plex Mono (self-hosted, ui-monospace fallback)
 
 ### Hierarchy
-- **Display** (600, `clamp(2.4rem, 4.6vw, 3.6rem)`, 1.06): the hero h1 only.
-- **Headline** (600, `clamp(1.6rem, 2.6vw, 2.1rem)`, tight): section `h2`.
-- **Title** (600, 1.05–1.2rem): waypoint/log/component `h3`.
-- **Body** (400, 1rem, 1.55, max 68ch): paragraph copy.
-- **Label** (mono, 0.72–0.86rem, +0.02em tracking, uppercase only for the single `HARD STOP` tag): specs, coordinates, section tags, button text.
+- **Display** (600, `clamp(3.1rem, 5.2vw, 4.7rem)`, 0.98): hero h1 only.
+- **Headline** (600, `clamp(2.4rem, 4.4vw, 4.2rem)`, 1.0): section `h2`.
+  Band sections use a compact h2 (`clamp(1.5rem, 2.4vw, 2.1rem)`).
+- **Title** (600, 1.05–1.75rem): `h3` in stops, lists, and panels.
+- **Body** (400, 1rem, 1.6, max ~60ch): paragraph copy.
+- **Label** (mono, 0.7–0.84rem, +0.02–0.06em tracking): buttons, meta
+  readouts, diagram labels, vault entries.
 
 ### Named Rules
-**The Diegetic Label Rule.** Every mono readout must belong to the chart's own instrument (a bearing, a spec, a log mark). A mono label placed above a heading as a page-wide kicker is the one construction this system refuses outright.
+**The Diegetic Label Rule.** Every mono label belongs to the signal scene — a
+platform spec, a route readout, a vault name, a warning tag. A mono label
+placed above a heading as a page-wide kicker is refused outright.
+
+**The Human Sentence Rule.** Headings and body copy are written the way a
+person talks: subject, verb, and a reason to care. Two consecutive verbless
+fragments are a rewrite trigger.
 
 ## Layout
 
-Single centered column, `min(1180px, 100% - 3rem)`. Sections stack with 5.5rem vertical padding and a 1px brass divider between them (never a card boundary). Two breakpoints: 900px collapses the hero to one column and the platform strip to two, 720px collapses the top nav into a slide-down disclosure and the platform strip to one column. Spacing rhythm holds throughout: more space above a heading than below it; the course/log/vault lists all share the same divided-list pattern rather than each inventing its own.
+Single centered column, `min(1280px, 100% - gutters)`. Six sections: hero
+(beam diagram + truth strip), connect (three stops on a plotted line),
+local-first (copy + vault + habits beside the identity panel), platforms (a
+slim band with a controller rail note), roadmap (a slim two-column band:
+by 1.0 / planned for later), builds (framed panel). Sections divide
+with 1px brass hairlines. Breakpoints: 1120px trims the hero grid, 900px
+stacks hero/course/local grids and collapses the nav into a disclosure, 640px
+tightens everything to one column.
 
 ## Elevation & Depth
 
-Flat by design — the chart metaphor is a 2D plotted surface, not a stack of lifted panels. Depth reads through line weight and opacity (bezel rings at 32–55% opacity, dividers at 28%), not shadow. The one exception is a soft `drop-shadow` glow behind the hero brand mark, which reads as instrument backlight, not card elevation.
+The scene is deep, the interface is flat. Depth comes from the night imagery,
+the starfield canvas, and layered dark gradients inside the two framed panels
+(hero figure, downloads). UI chrome itself uses hairlines, not shadows — the
+only box-shadows are large, soft, offset ambient shadows under the two framed
+panels and the primary button.
 
 ### Named Rules
-**The No-Card Rule.** No component gets a background box, radius, or shadow to read as a "card." Grouping is done with shared bezels, dividers, and continued plotted lines instead.
+**The Two-Frames Rule.** Exactly two components get a full border and a
+backdrop: the hero's connection figure and the downloads panel (plus the
+amber identity warning, which earns its border as a warning). Everything else
+groups with hairline dividers on the open page — no card grids.
 
 ## Shapes
 
-No border radius anywhere in the system (`rounded: none`) — every edge is a hard instrument line, consistent with an engraved chart/bezel material. Circles exist only as chart furniture (waypoint nodes, bezel rings, platform-icon primitives), never as a UI chrome device (no pill buttons, no rounded cards).
+No border radius on any UI element — buttons, panels, strips, and rules are
+hard-edged. Rounded corners exist only inside diagram/icon drawings where the
+depicted object is itself rounded (a handheld's shell, a monitor's bezel).
+Circles are diagram furniture: endpoint rings, pulses, node dots.
 
 ## Components
 
 ### Buttons
-- **Shape:** square corners, 1px border, mono label type, `0.65em 1.1em` padding.
-- **Primary (`btn--trail`):** filled cyan background, navy-000 text, 600 weight. The only filled button in the system — reserved for the single primary action per view.
-- **Ghost (`btn--ghost`):** transparent, dim ink border, ink-100 text; the default secondary action.
-- **Hover:** brass buttons tint their border/background toward `brass-200`; the trail button brightens toward `trail-200`. No transform, no shadow.
+Square corners, 1px border, mono label, min-height 48px (40px in the nav).
+- **Primary:** filled cyan, navy text, the only filled button; one per view
+  region.
+- **Secondary:** transparent with dim ink border; hover tints toward brass.
 
 ### Navigation
-Sticky top bar, translucent navy with a functional (not decorative) blur for legibility while scrolling, 1px brass-tinted bottom rule. Links are plain text with a brass underline on hover/focus. Below 720px the links collapse into a slide-down disclosure toggled by a bordered "Menu" button with `aria-expanded`/`aria-controls`.
+Fixed top bar, transparent until scroll, then translucent navy with
+functional blur and a brass hairline. Link hover/focus draws a 1px brass
+underline. Below 900px links collapse into a slide-down disclosure with
+`aria-expanded`.
 
-### Chart Figure (signature component)
-The hero's astrolabe: an SVG instrument (tick ring, two bezel circles, two cubic-bezier "plot lines" in trail color, two waypoint node circles, mono coordinate labels) layered over the brand mark image. The plot lines draw in once via `stroke-dashoffset` on load (`prefers-reduced-motion` shows the end state immediately, no animation). This pattern — a plotted line connecting two labeled nodes — repeats as the vertical divider in the "course" section's waypoint list.
+### Connection Figure (signature component)
+The hero's framed night scene: brand night-sky art, a starfield/particle
+canvas, and an SVG diagram — one straight beam between two labeled endpoint
+rings, with a route label plate rotated to the beam's exact angle. Geometry
+lives in one viewBox (1000×620); the canvas derives its particle path from
+the beam element's rendered rect so the two can never drift apart. The beam
+draws in once via `stroke-dashoffset` when the figure enters view;
+`prefers-reduced-motion` shows the finished state.
+Small screens swap in compact label variants (a shorter route tag, host
+labels moved above the ring) sized in larger user units, because SVG text
+scales with the viewBox and desktop sizes become illegible below ~640px.
+
+### Stops and Strips
+The repeated grouping pattern: items separated by brass hairlines on the open
+page — truth strip, course track (with the cyan plotted line threading the
+icons), vault list, habit list, platform rail. Icons are 1.25–1.6px stroke
+line drawings, cyan-ringed only when they sit on the signal line.
 
 ### Instrument Panels
-Full 1px brass border on all sides (never a colored left/right accent border), used for the security "HARD STOP" callout and the downloads panel. Internal padding 1.8–2.6rem.
+Full 1px border on all sides. The downloads panel frames the night art with
+the beam arriving from the right; the identity warning uses the amber border
+and is the page's only warning surface.
+
+## Motion
+
+One authored moment: the hero beam draws in on first view. One quiet ambient
+layer, always subordinate: star twinkle, six particles riding the beam,
+endpoint pulses breathing on a 6.5s cycle. Hover feedback is color/underline
+only — no transforms, no lifts, no tilt. `prefers-reduced-motion` collapses
+all of it to the finished state.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** reserve cyan (`trail-100`) for exactly one job per view: the live/active state or the primary action.
-- **Do** keep every mono label diegetic to the chart (a real spec, coordinate, or log mark) — never decorative.
-- **Do** use full 1px borders for panels; never a colored `border-left`/`border-right` heavier than 1px.
-- **Do** keep motion to one authored moment per view; respect `prefers-reduced-motion` by showing the end state.
+- **Do** keep cyan for the signal and the primary action, and nothing else.
+- **Do** write headings a person would say out loud.
+- **Do** derive any canvas/JS geometry from the SVG beam's rendered position
+  rather than duplicating coordinates.
+- **Do** keep every mono label diegetic: specs, routes, vault names, tags.
 
 ### Don't:
-- **Don't** add a kicker/eyebrow label above any heading — the heading carries its own weight.
-- **Don't** put icon+heading+text into an elevated "card" shell; use the divided-list or divided-strip pattern instead.
-- **Don't** round any corner — the system's edges are all hard instrument lines.
-- **Don't** introduce a second saturated accent color; brass is structural, not a second call-to-action color.
+- **Don't** color headline words with the accent — emphasis comes from the
+  sentence, not a tint.
+- **Don't** add a kicker/eyebrow above any heading.
+- **Don't** introduce new bordered boxes; group with hairlines instead.
+- **Don't** round a corner on any UI chrome.
+- **Don't** add hover transforms, parallax tilt, or scroll-driven effects;
+  the motion budget is spent.
