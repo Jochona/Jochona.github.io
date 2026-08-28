@@ -182,6 +182,7 @@ td.W { white-space: nowrap; }
 
 /* Roadmap */
 .posts { display: grid; grid-template-columns: 1fr 1fr; gap: 2.4rem; margin-top: 0.9rem; }
+.repo-link { margin-left: 2ch; color: var(--wht); }
 .posts h3 { color: var(--bwht); font-size: 1em; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
 .posts p { color: var(--wht); max-width: 46ch; }
 

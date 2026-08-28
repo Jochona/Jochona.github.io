@@ -64,7 +64,7 @@ RISK: retro-terminal register; held honest by real claims, real tables, zero dec
 <a href="#platforms"> <span class="y">[2]</span> <span class="W">PLATFORMS</span> <span class="c">........</span> Windows · macOS · Linux · handhelds <span class="c">»</span></a>
 <a href="#controller"> <span class="y">[3]</span> <span class="W">CONTROLLER</span> <span class="c">.......</span> every workflow works from the couch <span class="c">»</span></a>
 <a href="#local"> <span class="y">[4]</span> <span class="W">LOCAL-FIRST</span> <span class="c">......</span> pairing secrets live in your OS vault <span class="c">»</span></a>
-<a href="#builds"> <span class="y">[5]</span> <span class="W">BUILDS</span> <span class="c">...........</span> dev builds on GitHub, updated often <span class="c">»</span></a>
+<a href="#builds"> <span class="y">[5]</span> <span class="W">BUILDS</span> <span class="c">...........</span> CI builds from GitHub Actions <span class="c">»</span></a>
 <a href="#roadmap"> <span class="y">[6]</span> <span class="W">COMING UP</span> <span class="c">........</span> what lands by 1.0, and what's later <span class="c">»</span></a></pre>
         <pre class="w40"><a href="#what"><span class="y">[1]</span> <span class="W">WHAT IT IS</span>
     <span class="c">the games already on your PC</span></a>
@@ -75,7 +75,7 @@ RISK: retro-terminal register; held honest by real claims, real tables, zero dec
 <a href="#local"><span class="y">[4]</span> <span class="W">LOCAL-FIRST</span>
     <span class="c">secrets in your OS vault</span></a>
 <a href="#builds"><span class="y">[5]</span> <span class="W">BUILDS</span>
-    <span class="c">dev builds on GitHub</span></a>
+    <span class="c">CI builds from GitHub</span></a>
 <a href="#roadmap"><span class="y">[6]</span> <span class="W">COMING UP</span>
     <span class="c">by 1.0, and later</span></a></pre>
       </nav>
@@ -90,7 +90,7 @@ RISK: retro-terminal register; held honest by real claims, real tables, zero dec
           <div><dt>LICENSE</dt><dd>GPL-3.0 · Moonlight fork</dd></div>
           <div><dt>STATUS</dt><dd><span class="g">●</span> dev builds</dd></div>
         </dl>
-        <a class="btn" href="https://github.com/Jochona/jochona-client">[ GET DEV BUILDS ]</a>
+        <a class="btn" href="https://github.com/Jochona/jochona-client/actions/workflows/build.yml">[ GET DEV BUILDS ]</a>
       </aside>
     </div>
 
@@ -134,9 +134,9 @@ RISK: retro-terminal register; held honest by real claims, real tables, zero dec
     <table>
       <thead><tr><th scope="col">PLATFORM</th><th scope="col">PACKAGE</th><th scope="col">STATUS</th></tr></thead>
       <tbody>
-        <tr><td class="W">WINDOWS</td><td>11 · x64 · installer / portable · ROG Ally</td><td class="g">dev build</td></tr>
-        <tr><td class="W">MACOS</td><td>14+ · DMG · Apple Silicon</td><td class="g">dev build</td></tr>
-        <tr><td class="W">LINUX</td><td>x86-64 · Flatpak / AppImage</td><td class="g">dev build</td></tr>
+        <tr><td class="W">WINDOWS</td><td>11 · x64 / arm64 · ROG Ally</td><td class="g">dev build</td></tr>
+        <tr><td class="W">MACOS</td><td>DMG · Apple Silicon</td><td class="g">dev build</td></tr>
+        <tr><td class="W">LINUX</td><td>x86-64 · AppImage</td><td class="g">dev build</td></tr>
         <tr><td class="W">STEAM DECK</td><td>handheld · docked</td><td class="g">dev build</td></tr>
       </tbody>
     </table>
@@ -171,17 +171,19 @@ RISK: retro-terminal register; held honest by real claims, real tables, zero dec
 
   <section class="screen panel" id="builds" aria-labelledby="builds-title">
     <h2 class="phead" id="builds-title">[ 5 · BUILDS ]</h2>
-    <p class="dim">FILE AREA /builds — in active development · no tagged release yet</p>
+    <p class="dim">FILE AREA /builds — CI artifacts, built per pull request or on demand · no tagged release yet</p>
     <table>
       <thead><tr><th scope="col">FILE</th><th scope="col">CONTENTS</th></tr></thead>
       <tbody>
-        <tr><td class="W">jochona-win-x64</td><td>installer + portable build</td></tr>
-        <tr><td class="W">jochona-macos</td><td>DMG, Apple Silicon</td></tr>
-        <tr><td class="W">jochona-linux</td><td>Flatpak / AppImage</td></tr>
+        <tr><td class="W">Jochona-Windows-x64 / -arm64</td><td>portable Windows build</td></tr>
+        <tr><td class="W">Jochona-macOS</td><td>DMG, Apple Silicon</td></tr>
+        <tr><td class="W">Jochona-LinuxAppImage</td><td>x86_64 AppImage</td></tr>
+        <tr><td class="W">Jochona-SteamLink</td><td>Steam Link deploy</td></tr>
       </tbody>
     </table>
     <p class="dl-row">
-      <a class="btn btn--big" href="https://github.com/Jochona/jochona-client">[ ENTER ] DOWNLOAD FROM GITHUB</a>
+      <a class="btn btn--big" href="https://github.com/Jochona/jochona-client/actions/workflows/build.yml">[ ENTER ] OPEN CI BUILDS</a>
+      <a class="repo-link" href="https://github.com/Jochona/jochona-client">or browse the source »</a>
     </p>
   </section>
 
@@ -190,7 +192,7 @@ RISK: retro-terminal register; held honest by real claims, real tables, zero dec
     <div class="posts">
       <article>
         <h3><span class="m">POST #47</span> · BY 1.0</h3>
-        <p>A unified library across your hosts, per-game streaming profiles, and the certification target: 4K 120 Hz HDR with AV1, where the complete hardware path supports it.</p>
+        <p>A unified library across your hosts, per-game streaming profiles, Flatpak-first Linux packaging, and the certification target: 4K 120 Hz HDR with AV1, where the complete hardware path supports it.</p>
       </article>
       <article>
         <h3><span class="m">POST #48</span> · PLANNED FOR LATER</h3>
