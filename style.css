@@ -127,7 +127,7 @@ pre { font-family: inherit; overflow: hidden; }
 
 .kv { display: grid; gap: 0.35em; margin: 0.6rem 0 0; }
 .kv > div { display: grid; grid-template-columns: max-content 1fr; gap: 1ch; }
-.kv dt { color: var(--mag); font-weight: 500; }
+.kv dt { color: var(--bmag); font-weight: 500; }
 .kv dt::after { content: ":"; color: var(--cyn-dim); }
 .kv dd { color: var(--wht); }
 .kv--wide > div { grid-template-columns: 12ch 1fr; max-width: 60ch; }
@@ -155,7 +155,7 @@ pre { font-family: inherit; overflow: hidden; }
 /* Tables */
 table { border-collapse: collapse; margin: 0.9rem 0 0.4rem; width: 100%; max-width: 78ch; }
 th, td { text-align: left; padding: 0.3em 2ch 0.3em 0; vertical-align: top; }
-th { color: var(--mag); font-weight: 500; border-bottom: 1px solid var(--cyn-dim); letter-spacing: 0.05em; }
+th { color: var(--bmag); font-weight: 500; border-bottom: 1px solid var(--cyn-dim); letter-spacing: 0.05em; }
 td { border-bottom: 1px dashed #26262c; }
 td.W { white-space: nowrap; }
 

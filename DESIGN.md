@@ -17,8 +17,8 @@ Sixteen-color ANSI registers, used by role, never decoratively:
 
 - ink/ground: `--blk #0a0a0c`, panel fill `--blk-2 #101014`
 - frame chrome: `--cyn #00aaaa`, dim frame `--cyn-dim #036c6c`
-- content accent / links: `--bcyn #55ffff`
-- labels: `--mag #aa00aa`, tagline `--bmag #ff55ff`
+- labels: `--bmag #ff55ff` (AA on black); `--mag #aa00aa` is decorative only
+  (`░▒▓`, dividers), never normal-size text
 - body: `--wht #b4b4b4`, emphasis `--bwht #ffffff`, de-emphasis `#7c7c84`
 - hotkeys and focus: `--yel #ffff55`
 - reversed-video bars and buttons: `--blu #0000aa` (+ border `#4444ff`, bar
