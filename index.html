@@ -17,7 +17,7 @@
   <link rel="apple-touch-icon" href="/assets/brand/favicon-256.png" />
   <link rel="preload" href="/assets/brand/hero-wide.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/style.css?v=c5ab8679" />
+  <link rel="stylesheet" href="/style.css?v=3cede46c" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,6 +34,7 @@
           <li><a href="#connect">How it connects</a></li>
           <li><a href="#paths">Network paths</a></li>
           <li><a href="#constellation">Own it all</a></li>
+          <li><a href="#compare">Compare</a></li>
           <li><a href="#local-first">Local-first</a></li>
           <li><a href="#get-it">Builds</a></li>
         </ul>
@@ -276,6 +277,101 @@
             <p>A small always-on box on your home LAN, and the network's town crier. Overlays like Tailscale can't carry the wake broadcast from far away, so Beacon sends the magic packet for you, watches your host come up, and announces what it sees; a Stream Deck panel shows your fleet and wakes a host at a keypress.</p>
           </li>
         </ul>
+      </div>
+    </section>
+
+    <section class="compare section" id="compare" aria-labelledby="compare-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <h2 id="compare-title">Different tools solve different parts of the problem.</h2>
+            <p>Jochona begins with Moonlight's proven stream, not a claim that everyone else got it wrong. The difference is how much of the journey becomes one system you can own.</p>
+          </div>
+          <p class="section-bearing" aria-hidden="true">AUG 2026 · PRODUCT SCOPE, NOT BENCHMARKS</p>
+        </div>
+
+        <p class="table-hint" aria-hidden="true">SLIDE TO COMPARE ALL FOUR →</p>
+        <div class="table-scroll compare-scroll">
+          <table class="compare-table">
+            <caption class="visually-hidden">Jochona compared with Moonlight and Sunshine, Vibepollo, and Steam Remote Play</caption>
+            <thead>
+              <tr>
+                <th scope="col">What matters</th>
+                <th scope="col">Jochona <span>CLIENT IN DEV · PLANE PLANNED</span></th>
+                <th scope="col">Moonlight + Sunshine <span>SHIPPING · COMMUNITY</span></th>
+                <th scope="col">Vibepollo + Moonlight <span>SHIPPING · ACTIVE FORK</span></th>
+                <th scope="col">Steam Remote Play <span>SHIPPING · VALVE</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Today</th>
+                <td><b>Development builds.</b> The client is real; Jochona Host is in development; Constellation and Beacon are planned.</td>
+                <td><b>Released and established.</b> Separate community client and host projects with a long operating history.</td>
+                <td><b>Released and active.</b> A fast-moving Apollo and Sunshine host fork.</td>
+                <td><b>Released and integrated.</b> Part of Steam and the Steam Link ecosystem.</td>
+              </tr>
+              <tr>
+                <th scope="row">Ownership</th>
+                <td><b>GPL-3.0.</b> No required Jochona account; the planned services stay self-hosted.</td>
+                <td><b>GPL-3.0 on both sides.</b> No vendor account; local host setup and pairing.</td>
+                <td><b>GPL-3.0 host.</b> Local session auth and scoped API tokens; pair it with a Moonlight-family client.</td>
+                <td><b>Proprietary.</b> Steam-account-centered, with guest invitations for Remote Play Together.</td>
+              </tr>
+              <tr>
+                <th scope="row">Devices</th>
+                <td><b>Desktop and handheld first.</b> Windows, macOS, Linux, and Steam Deck clients; Sunshine, Apollo, and Vibepollo hosts.</td>
+                <td><b>The broadest reach here.</b> Sunshine hosts the major desktop OSes; Moonlight spans desktop, mobile, TV, SBC, and community ports.</td>
+                <td><b>Windows-first host automation.</b> Client reach comes from the Moonlight ecosystem.</td>
+                <td><b>Steam host, broad Steam Link clients.</b> Desktop, mobile, TV, Raspberry Pi, and Meta Quest.</td>
+              </tr>
+              <tr>
+                <th scope="row">Library</th>
+                <td><b>One library is a 1.0 target.</b> Merge games across paired hosts, then keep per-game streaming profiles.</td>
+                <td><b>Per host.</b> Each paired machine presents its own applications; consolidation is up to you.</td>
+                <td><b>Playnite-aware.</b> Sync games and artwork, then launch and terminate them cleanly from the host.</td>
+                <td><b>Steam-native.</b> Your library is already there; Remote Play Together is available on supported games.</td>
+              </tr>
+              <tr>
+                <th scope="row">Display + tuning</th>
+                <td><b>Capability-aware.</b> Show only controls a host supports; per-game profiles and certified 4K 120&nbsp;Hz HDR/AV1 paths are 1.0 targets.</td>
+                <td><b>Deep and proven.</b> Resolution, HDR, codecs, and controllers span client and host, with tuning split between them.</td>
+                <td><b>The specialist.</b> Bundled virtual display, display recovery, WGC, RTSS frame pacing, and frame-generation fixes.</td>
+                <td><b>Complexity hidden.</b> Tuned defaults and controller layouts favor quick setup over host-level control.</td>
+              </tr>
+              <tr>
+                <th scope="row">Fleet + cloud VMs</th>
+                <td><b>Planned as one fleet.</b> Home PCs and rented VMs with start/stop, readiness states, and idle-cost control.</td>
+                <td><b>Bring your own orchestration.</b> It can stream from a cloud gaming server; VM lifecycle and cross-host state live elsewhere.</td>
+                <td><b>Excellent per host.</b> Cross-host fleet state and cloud-provider lifecycle live elsewhere.</td>
+                <td><b>Outside Remote Play's job.</b> It streams from computers running Steam, not a provisioned VM fleet.</td>
+              </tr>
+              <tr>
+                <th scope="row">Friends</th>
+                <td><b>Planned, owner-approved access.</b> Time-bounded invitations without making a Jochona account mandatory.</td>
+                <td><b>Device-to-host pairing.</b> Friend identity, invitations, and revocation are DIY.</td>
+                <td><b>Host-local policy.</b> Session auth and scoped tokens help automation; friend access remains your setup.</td>
+                <td><b>Best integrated today.</b> Friends List and Remote Play Together share controllers, keyboard, mouse, audio, and voice.</td>
+              </tr>
+              <tr>
+                <th scope="row">Beyond the LAN</th>
+                <td><b>Direct first.</b> Beacon is planned for wake and annunciation; a publicly reachable Constellation node can relay as a last resort.</td>
+                <td><b>Your route, your setup.</b> Port forwarding, IPv6, or an SDN/VPN; discovery and wake depend on the network.</td>
+                <td><b>The same GameStream routes.</b> Host recovery is rich; network path, remote discovery, and wake remain your setup.</td>
+                <td><b>Inside Steam's ecosystem.</b> Valve handles the connection experience; there is no self-hosted management plane.</td>
+              </tr>
+              <tr>
+                <th scope="row">Pick it when</th>
+                <td><b>You want the DIY stack to become one ownable system</b> and accept that its management plane is still roadmap.</td>
+                <td><b>You want the established open-source baseline now</b> with the widest client choice.</td>
+                <td><b>You want the most automated Windows host here</b>, especially for headless and display-sensitive setups.</td>
+                <td><b>Your games live in Steam</b> and instant setup or couch co-op matters more than self-hosting.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="paths-note compare-note">Feature scope checked 28 August 2026 against the official pages for <a href="https://moonlight-stream.org/">Moonlight</a>, <a href="https://github.com/LizardByte/Sunshine">Sunshine</a>, <a href="https://github.com/Nonary/Vibepollo">Vibepollo</a>, and <a href="https://store.steampowered.com/remoteplay">Steam Remote Play</a>. No latency ranking: Jochona has no tagged release or public benchmark yet.</p>
       </div>
     </section>
 
