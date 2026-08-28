@@ -153,7 +153,7 @@ Single centered column, `min(1280px, 100% - gutters)`. Eight sections: hero
 (beam diagram + truth strip), connect (three stops on a plotted line), paths
 (a route-capability table: LAN / Tailscale·NetBird / ZeroTier / direct
 internet against streaming, discovery, and wake), constellation (a
-hairline-divided roster of the five services: Client, Host, Companion,
+hairline-divided roster of the five services: Client, Host, Constellation,
 Beacon, Relay, each with a mono status readout), local-first (copy + vault +
 habits beside the identity panel), platforms (a slim band with a controller
 rail note), roadmap (a slim two-column band: by 1.0 / planned for later),
@@ -229,7 +229,8 @@ blindness and stays inside the Signal Rule. On small screens it scrolls
 horizontally inside `.table-scroll`; it never stacks.
 
 ### Constellation List
-The service roster: a hairline-divided two-column list (name + status on the
+The service roster (Constellation is also the control-plane service's proper
+name): a hairline-divided two-column list (name + status on the
 left, one honest paragraph on the right). Status readouts are diegetic mono
 labels — brass for IN DEVELOPMENT, caption ink for PLANNED. Claims about
 planned services stay in the future tense and sit under a lede that says
