@@ -92,6 +92,8 @@ target, dev builds are labeled as such.
   are banned from art because fallback advances break the frame.
 - **40-column mode is a variant, not a squeeze.** Long lines get rewritten
   for 40 columns; horizontal clipping is a defect.
-- **Cache-busted assets.** `style.css` and `app.js` ship with `?v=` — GitHub
-  Pages caches CSS for 4 hours and stale-CSS/new-HTML mismatches double the
-  variant markup.
+- **Cache-busted assets.** `style.css` and `app.js` ship with
+  `?v=<first 8 hex of the file's md5>`, restamped in index.html on EVERY
+  asset edit (`md5sum style.css app.js`). A date or reused token recreates
+  the stale-CSS defect: GitHub Pages caches CSS for 4 hours and a
+  stale-CSS/new-HTML mismatch doubles the variant markup.
