@@ -212,7 +212,7 @@
               <tr>
                 <th scope="row">Tailscale · NetBird</th>
                 <td><b>Great.</b> An encrypted WireGuard tunnel, straight to your host.</td>
-                <td><b>Manual entry.</b> The tunnel doesn't carry the multicast that discovery listens for.</td>
+                <td><b>Manual entry.</b> The tunnel doesn't carry the multicast that discovery listens for. Beacon will announce your hosts across it once it lands.</td>
                 <td><b>No.</b> These are layer-3 networks, and the wake packet is a layer-2 broadcast. Beacon exists to close exactly this gap.</td>
               </tr>
               <tr>
@@ -224,7 +224,7 @@
               <tr>
                 <th scope="row">Direct internet</th>
                 <td><b>Works</b> when you deliberately open a path to your host.</td>
-                <td><b>Manual entry.</b></td>
+                <td><b>Manual entry.</b> Same story: no multicast, so Beacon will do the announcing here too.</td>
                 <td><b>No.</b> Nothing along the way knows how to deliver a broadcast.</td>
               </tr>
             </tbody>
