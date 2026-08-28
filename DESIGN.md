@@ -97,3 +97,7 @@ target, dev builds are labeled as such.
   asset edit (`md5sum style.css app.js`). A date or reused token recreates
   the stale-CSS defect: GitHub Pages caches CSS for 4 hours and a
   stale-CSS/new-HTML mismatch doubles the variant markup.
+  After pushing, NEVER request the new `?v=` URL until the "pages build
+  and deployment" run for that commit reports success — a pre-deploy
+  request primes the CDN key with old bytes and poisons it for the full
+  TTL.
