@@ -153,8 +153,9 @@ Single centered column, `min(1280px, 100% - gutters)`. Eight sections: hero
 (beam diagram + truth strip), connect (three stops on a plotted line), paths
 (a route-capability table: LAN / Tailscale·NetBird / ZeroTier / direct
 internet against streaming, discovery, and wake), constellation (a
-hairline-divided roster of the five services: Client, Host, Constellation,
-Beacon, Relay, each with a mono status readout), local-first (copy + vault +
+hairline-divided roster of the four pieces: Client, Host, Constellation,
+Beacon, each with a mono status readout; the relay is a Constellation
+capability, not a named product), local-first (copy + vault +
 habits beside the identity panel), platforms (a slim band with a controller
 rail note), roadmap (a slim two-column band: by 1.0 / planned for later),
 builds (framed panel). Sections divide with 1px brass hairlines.

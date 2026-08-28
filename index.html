@@ -243,7 +243,7 @@
             <h2 id="constellation-title">It isn't that nothing sits in the middle. It's that you can own all of it.</h2>
             <p>Rented clouds solve real problems: waking a distant PC, identity, friends, awkward NATs. Jochona solves the same problems with pieces you host yourself. The client exists today; the rest is designed and named, and every piece will be open source.</p>
           </div>
-          <p class="section-bearing" aria-hidden="true">CLIENT · HOST · CONSTELLATION · BEACON · RELAY</p>
+          <p class="section-bearing" aria-hidden="true">CLIENT · HOST · CONSTELLATION · BEACON</p>
         </div>
 
         <ul class="svc-list">
@@ -266,21 +266,14 @@
               <h3>Jochona Constellation</h3>
               <span class="svc-status">PLANNED</span>
             </div>
-            <p>The control plane you host, named for what it does: it arranges every machine you can stream to into one picture. Identity, trusted friends, host presence, and wake; home PCs and rented gaming VMs as a single fleet, honest about where each machine stands: start or wake requested, machine booting, host reachable, streaming ready. Constellation starts a cloud VM when you sit down and shuts it down when you leave, so idle hours cost nothing, and friends only ever launch on terms you approve.</p>
+            <p>The whole management plane, named for what it does: it arranges every machine you can stream to into one picture. Identity, trusted friends, host presence, and wake; home PCs and rented gaming VMs as a single fleet, honest about where each machine stands: start or wake requested, machine booting, host reachable, streaming ready. Constellation starts a cloud VM when you sit down and shuts it down when you leave, so idle hours cost nothing, and friends only ever launch on terms you approve. When no direct path exists, it can stand up a relay where it's hosted: bandwidth-governed, observable, and never able to grant access on its own.</p>
           </li>
           <li>
             <div class="svc-name">
               <h3>Jochona Beacon</h3>
               <span class="svc-status">PLANNED</span>
             </div>
-            <p>A small always-on box on your home LAN. Overlays like Tailscale can't carry the wake broadcast from far away, so Beacon sends the magic packet for you and watches your host come up.</p>
-          </li>
-          <li>
-            <div class="svc-name">
-              <h3>Jochona Relay</h3>
-              <span class="svc-status">PLANNED</span>
-            </div>
-            <p>The last resort for when no direct path exists. Self-hosted, bandwidth-governed, observable, and never able to grant access on its own. Most sessions will never touch it.</p>
+            <p>A small always-on box on your home LAN, and the network's town crier. Overlays like Tailscale can't carry the wake broadcast from far away, so Beacon sends the magic packet for you, watches your host come up, and announces what it sees; a Stream Deck panel shows your fleet and wakes a host at a keypress.</p>
           </li>
         </ul>
       </div>
@@ -290,7 +283,7 @@
       <div class="wrap local-grid">
         <div class="local-copy">
           <h2 id="local-title">Nothing in the middle you don't own.</h2>
-          <p class="local-lede">Today that promise is easy to audit: there is no Jochona account, relay, or server your stream could detour through, because none exist yet. When Constellation, Beacon, and the relay arrive, they run on your hardware, under your rules.</p>
+          <p class="local-lede">Today that promise is easy to audit: there is no Jochona account, relay, or server your stream could detour through, because none exist yet. When Constellation and Beacon arrive, they run on your hardware, under your rules.</p>
           <p>Your pairings stay on your device. The bar for 1.0 puts credentials in the vault your operating system already guards, not a config file, not plain text.</p>
 
           <dl class="vault-list">
@@ -362,7 +355,7 @@
           </div>
           <div class="roadmap-col">
             <h3>Planned for later</h3>
-            <p>The rest of the lineup. Constellation brings remote wake, trusted-friend access, and cloud-VM fleets; Beacon wakes hosts your overlay can't reach; the relay covers the rare path that can't go direct. All of it stays open source and self-hostable, and a Jochona account never becomes mandatory.</p>
+            <p>The rest of the lineup. Constellation brings remote wake, trusted-friend access, cloud-VM fleets, and a last-resort relay for the rare path that can't go direct; Beacon wakes hosts your overlay can't reach and puts your fleet on a Stream Deck. All of it stays open source and self-hostable, and a Jochona account never becomes mandatory.</p>
           </div>
         </div>
       </div>
