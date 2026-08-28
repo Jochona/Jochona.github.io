@@ -1,243 +1,97 @@
 ---
-name: Jochona
-description: Local-first game streaming to your own PC
-colors:
-  navy-000: "#030710"
-  navy-025: "#060b16"
-  navy-050: "#081426"
-  navy-100: "#0d1d35"
-  navy-150: "#132b4c"
-  navy-200: "#1b3b61"
-  brass-050: "#8a713c"
-  brass-100: "#caa356"
-  brass-200: "#e3c07f"
-  trail-100: "#54ead0"
-  trail-200: "#9df5e4"
-  ink-000: "#f6f4ed"
-  ink-100: "#d6e0ec"
-  ink-200: "#a8b9cb"
-  ink-300: "#8399af"
-  danger-100: "#e2a05c"
-typography:
-  display:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(3.1rem, 5.2vw, 4.7rem)"
-    fontWeight: 600
-    lineHeight: 0.98
-    letterSpacing: "-0.038em"
-  headline:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
-    fontSize: "clamp(2.4rem, 4.4vw, 4.2rem)"
-    fontWeight: 600
-    lineHeight: 1
-    letterSpacing: "-0.035em"
-  body:
-    fontFamily: "Inter, system-ui, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 400
-    lineHeight: 1.6
-  label:
-    fontFamily: "IBM Plex Mono, ui-monospace, monospace"
-    fontSize: "0.84rem"
-    letterSpacing: "0.02em"
-rounded:
-  none: "0px"
-spacing:
-  sm: "0.8rem"
-  md: "1.6rem"
-  lg: "3rem"
-  xl: "5.5rem"
-components:
-  button-primary:
-    backgroundColor: "{colors.trail-100}"
-    textColor: "{colors.navy-000}"
-    typography: "{typography.label}"
-    padding: "0.78rem 1.15rem"
-  button-primary-hover:
-    backgroundColor: "{colors.trail-200}"
-  button-secondary:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink-000}"
-    typography: "{typography.label}"
-    padding: "0.78rem 1.15rem"
+name: Jochona — Nightboard
+description: The site is a one-line BBS at 2 a.m.; the visitor is the only caller, because it's their hardware.
 ---
 
-# Design System: Jochona
+# World
 
-## Overview
+Self-hosting is the BBS tradition. The page is a dial-up bulletin board:
+ANSI colors on terminal black, CP437 box chrome, a numbered menu as the
+navigation, a file area as the download call to action. The argument lives in
+one line: "1 CALLER ONLINE: YOU — there is no central server to be online
+on."
 
-**Creative North Star: "The Direct Signal"**
+# Color
 
-One straight cyan beam crossing a night sky is the whole idea: your device on
-one end, your PC on the other, nothing in between. The hero draws that beam
-once — literally, as the page's single authored motion — and every later
-section is a station along the same signal: the connect track's plotted line,
-the glowing line arriving into the downloads panel. The visual world is the
-scene the product lives in (a dark living room, a homelab at night), rendered
-as night-sky imagery, drifting starfield, and hard-edged instrument furniture.
+Sixteen-color ANSI registers, used by role, never decoratively:
 
-Voice is **warm and direct** — a person explaining the product to a friend.
-Sentences carry a subject and a verb; no fragment-fragment punchline cadence,
-no invented metrics, no testimonials. The product is pre-release and the copy
-says so plainly.
+- ink/ground: `--blk #0a0a0c`, panel fill `--blk-2 #101014`
+- frame chrome: `--cyn #00aaaa`, dim frame `--cyn-dim #036c6c`
+- content accent / links: `--bcyn #55ffff`
+- labels: `--mag #aa00aa`, tagline `--bmag #ff55ff`
+- body: `--wht #b4b4b4`, emphasis `--bwht #ffffff`, de-emphasis `#7c7c84`
+- hotkeys and focus: `--yel #ffff55`
+- reversed-video bars and buttons: `--blu #0000aa` (+ border `#4444ff`, bar
+  mid-text `#8888ff`)
+- status-good: `--grn #55ff55`; alert: `--red #ff5555`
+- table hairline: `#26262c`
 
-Confirmed rejections: no floating-laptop dashboard hero, no gradient text, no
-icon+heading+text card grid, no kicker/eyebrow labels above headings, no
-fabricated benchmarks or user counts.
+Yellow marks what a key does. Green is live status. Red is the system
+message. Blue backgrounds mean chrome (status bars) or an action (buttons).
 
-**Key Characteristics:**
-- Deep navy night ground, chosen for the use scene (TV or desk at night, low
-  ambient light).
-- One committed accent: cyan "trail" is the signal itself and the primary
-  action, nothing else.
-- Brass carries quiet structure: hairline dividers, meta labels, platform
-  icon strokes. It never competes with cyan for attention.
-- Motion is the beam drawing in once, plus a quiet ambient layer (star
-  twinkle, signal particles riding the beam, endpoint pulses breathing).
+# Type
 
-## Colors
+One voice: IBM Plex Mono 400/500 (self-hosted woff2), system mono fallback.
+Body `clamp(13px, 1.15vw, 16px)`. No display face: the title is CP437 block
+art in a `pre`. Panel headers are bracketed mono caps (`[ 1 · WHAT IT IS ]`)
+sitting on the panel border. The 8px `■` is panel corner chrome, not type.
 
-### Primary
-- **Signal Trail** (`#54ead0` / bright `#9df5e4`): the beam, its particles and
-  endpoint rings, the route label, the primary CTA, focus outlines, and the
-  live status dot. Never headline decoration, never body text.
+# Components
 
-### Secondary
-- **Instrument Brass** (`#caa356` / bright `#e3c07f` / dim `#8a713c`): the
-  page's structural ink — hairline rules (`--rule` at 24% opacity), mono meta
-  labels, secondary-button hover, platform icon strokes. Structure, not
-  emphasis.
+- **Status bars** (`.bar`): reversed blue/white, top bar sticky; yellow brand.
+- **Panels** (`.panel`): 1px `--cyn-dim` border on `--blk-2`, `■` corner
+  marks, `.phead` label knocked out over the border.
+- **Menu**: numbered `[N]` yellow hotkeys, dot leaders, `»` tails; hover/focus
+  reverses the label (cyan background, black text).
+- **Buttons** (`.btn`): `[ LABEL ]` reversed blue; hover flips to bright cyan.
+- **KV lists** (`.kv`): magenta label, colon in dim cyan, value in body white.
+- **Tables**: magenta header row over a cyan-dim rule; dashed row hairlines.
+- **System message** (`.sysmsg`): red-bordered sub-panel, `▓▒░` header.
+- **ASCII diagrams**: box-drawn, 80-column and 40-column variants.
 
-### Neutral
-- **Night Navy** (`#030710` panels, `#060b16` page ground, `#081426`–`#1b3b61`
-  raised steps): all grounds.
-- **Parchment White** (`#f6f4ed`): headings and high-emphasis labels.
-- **Signal Ink** (`#d6e0ec` body, `#a8b9cb` secondary, `#8399af` captions):
-  body text tinted from the navy hue, never pure gray.
-- **Caution Amber** (`#e2a05c`): reserved for the single host-identity
-  warning panel. Its rarity is what marks it as a warning.
+# Layout
 
-### Named Rules
-**The Signal Rule.** Cyan means exactly two things: the live signal (beam,
-particles, pulses, status) and the primary action. If an element is neither,
-it does not get cyan. Headline emphasis, list values, and decorative
-gradients are all violations.
+Single terminal column `min(100ch, 100% - 2.4rem)`. Hero: title art pours in,
+CONNECT block, MAIN MENU + SYSTEM INFO panel pair, caller line, SELECT prompt.
+Screens 1–6 are framed panels: what it is, platforms, controller, local-first,
+builds, coming up; then the attribution line and the bottom bar.
 
-## Typography
+Breakpoints: 900px stacks the hero panel pair and roadmap posts. 640px enters
+**40-column mode**: `.w80` pres swap for `.w40` variants, the column snaps to
+42ch, and `font-size: min(16px, calc((100vw - 1.6rem) / 24))` sizes the cell
+so 40 columns exactly fill the width. Reflow, never clip.
 
-**Display Font:** Space Grotesk (self-hosted, system-ui fallback)
-**Body Font:** Inter (self-hosted, system-ui fallback)
-**Label/Mono Font:** IBM Plex Mono (self-hosted, ui-monospace fallback)
+# Motion
 
-### Hierarchy
-- **Display** (600, `clamp(3.1rem, 5.2vw, 4.7rem)`, 0.98): hero h1 only.
-- **Headline** (600, `clamp(2.4rem, 4.4vw, 4.2rem)`, 1.0): section `h2`.
-  Band sections use a compact h2 (`clamp(1.5rem, 2.4vw, 2.1rem)`).
-- **Title** (600, 1.05–1.75rem): `h3` in stops, lists, and panels.
-- **Body** (400, 1rem, 1.6, max ~60ch): paragraph copy.
-- **Label** (mono, 0.7–0.84rem, +0.02–0.06em tracking): buttons, meta
-  readouts, diagram labels, vault entries.
+BBS motion only: the hero pours in line by line (60ms opacity steps at 90ms
+intervals via `--d`), below-fold panels flick on in one beat
+(`steps(2)`, triggered by IntersectionObserver), and the SELECT cursor blinks
+at 1.06s. No easing curves, no parallax, no hover transforms.
+`prefers-reduced-motion` shows everything instantly.
 
-### Named Rules
-**The Diegetic Label Rule.** Every mono label belongs to the signal scene — a
-platform spec, a route readout, a vault name, a warning tag. A mono label
-placed above a heading as a page-wide kicker is refused outright.
+# Interaction
 
-**The Human Sentence Rule.** Headings and body copy are written the way a
-person talks: subject, verb, and a reason to care. Two consecutive verbless
-fragments are a rewrite trigger.
+Number keys 1–6 jump to screens; Escape returns to top (app.js). Menu links
+are the same targets. Focus is always visible: yellow 2px outline.
 
-## Layout
+# Voice
 
-Single centered column, `min(1280px, 100% - gutters)`. Six sections: hero
-(beam diagram + truth strip), connect (three stops on a plotted line),
-local-first (copy + vault + habits beside the identity panel), platforms (a
-slim band with a controller rail note), roadmap (a slim two-column band:
-by 1.0 / planned for later), builds (framed panel). Sections divide
-with 1px brass hairlines. Breakpoints: 1120px trims the hero grid, 900px
-stacks hero/course/local grids and collapses the nav into a disclosure, 640px
-tightens everything to one column.
+Terminal-warm: short declaratives, board vocabulary (node, caller, file
+area, system message), zero hype. Honesty rules are invariant: claims are
+Jochona-scoped ("no Jochona account/cloud/relay"), LAN is direct, overlays
+are end-to-end encrypted, 4K 120 Hz HDR/AV1 is stated as the certification
+target, dev builds are labeled as such.
 
-## Elevation & Depth
+# Rules
 
-The scene is deep, the interface is flat. Depth comes from the night imagery,
-the starfield canvas, and layered dark gradients inside the two framed panels
-(hero figure, downloads). UI chrome itself uses hairlines, not shadows — the
-only box-shadows are large, soft, offset ambient shadows under the two framed
-panels and the primary button.
-
-### Named Rules
-**The Two-Frames Rule.** Exactly two components get a full border and a
-backdrop: the hero's connection figure and the downloads panel (plus the
-amber identity warning, which earns its border as a warning). Everything else
-groups with hairline dividers on the open page — no card grids.
-
-## Shapes
-
-No border radius on any UI element — buttons, panels, strips, and rules are
-hard-edged. Rounded corners exist only inside diagram/icon drawings where the
-depicted object is itself rounded (a handheld's shell, a monitor's bezel).
-Circles are diagram furniture: endpoint rings, pulses, node dots.
-
-## Components
-
-### Buttons
-Square corners, 1px border, mono label, min-height 48px (40px in the nav).
-- **Primary:** filled cyan, navy text, the only filled button; one per view
-  region.
-- **Secondary:** transparent with dim ink border; hover tints toward brass.
-
-### Navigation
-Fixed top bar, transparent until scroll, then translucent navy with
-functional blur and a brass hairline. Link hover/focus draws a 1px brass
-underline. Below 900px links collapse into a slide-down disclosure with
-`aria-expanded`.
-
-### Connection Figure (signature component)
-The hero's framed night scene: brand night-sky art, a starfield/particle
-canvas, and an SVG diagram — one straight beam between two labeled endpoint
-rings, with a route label plate rotated to the beam's exact angle. Geometry
-lives in one viewBox (1000×620); the canvas derives its particle path from
-the beam element's rendered rect so the two can never drift apart. The beam
-draws in once via `stroke-dashoffset` when the figure enters view;
-`prefers-reduced-motion` shows the finished state.
-Small screens swap in compact label variants (a shorter route tag, host
-labels moved above the ring) sized in larger user units, because SVG text
-scales with the viewBox and desktop sizes become illegible below ~640px.
-
-### Stops and Strips
-The repeated grouping pattern: items separated by brass hairlines on the open
-page — truth strip, course track (with the cyan plotted line threading the
-icons), vault list, habit list, platform rail. Icons are 1.25–1.6px stroke
-line drawings, cyan-ringed only when they sit on the signal line.
-
-### Instrument Panels
-Full 1px border on all sides. The downloads panel frames the night art with
-the beam arriving from the right; the identity warning uses the amber border
-and is the page's only warning surface.
-
-## Motion
-
-One authored moment: the hero beam draws in on first view. One quiet ambient
-layer, always subordinate: star twinkle, six particles riding the beam,
-endpoint pulses breathing on a 6.5s cycle. Hover feedback is color/underline
-only — no transforms, no lifts, no tilt. `prefers-reduced-motion` collapses
-all of it to the finished state.
-
-## Do's and Don'ts
-
-### Do:
-- **Do** keep cyan for the signal and the primary action, and nothing else.
-- **Do** write headings a person would say out loud.
-- **Do** derive any canvas/JS geometry from the SVG beam's rendered position
-  rather than duplicating coordinates.
-- **Do** keep every mono label diegetic: specs, routes, vault names, tags.
-
-### Don't:
-- **Don't** color headline words with the accent — emphasis comes from the
-  sentence, not a tint.
-- **Don't** add a kicker/eyebrow above any heading.
-- **Don't** introduce new bordered boxes; group with hairlines instead.
-- **Don't** round a corner on any UI chrome.
-- **Don't** add hover transforms, parallax tilt, or scroll-driven effects;
-  the motion budget is spent.
+- **One grammar.** Every element is something a BBS could draw: text, box
+  glyphs, reversed video. No gradients, no glow, no rounded corners, no
+  shadows, no imagery outside CP437 art.
+- **Exact-width art.** `pre` art rows are code-point counted (74/40 columns),
+  generated, not eyeballed; glyphs outside Plex Mono's coverage (e.g. `☾`)
+  are banned from art because fallback advances break the frame.
+- **40-column mode is a variant, not a squeeze.** Long lines get rewritten
+  for 40 columns; horizontal clipping is a defect.
+- **Cache-busted assets.** `style.css` and `app.js` ship with `?v=` — GitHub
+  Pages caches CSS for 4 hours and stale-CSS/new-HTML mismatches double the
+  variant markup.

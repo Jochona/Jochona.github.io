@@ -10,297 +10,207 @@
   <meta property="og:image" content="https://jochona.com/assets/brand/hero-wide.png" />
   <meta property="og:url" content="https://jochona.com/" />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#060b16" />
+  <meta name="theme-color" content="#0a0a0c" />
   <link rel="canonical" href="https://jochona.com/" />
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="256x256" href="/assets/brand/favicon-256.png" />
   <link rel="apple-touch-icon" href="/assets/brand/favicon-256.png" />
-  <link rel="preload" href="/assets/brand/hero-wide.webp" as="image" type="image/webp" fetchpriority="high" />
-  <link rel="stylesheet" href="/assets/fonts/fonts.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/style.css?v=20260827" />
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<!--
+THESIS: Self-hosting IS the BBS tradition; the page is a one-line board at 2 a.m. — the visitor is the only caller, because it's their hardware. Refuses the dark-hero-with-glow landing default.
+OWN-WORLD: 16 ANSI colors on terminal black; CP437 box chrome, framed panels with bracket corners; blue reversed-video bars and buttons; yellow hotkeys; one type voice (IBM Plex Mono). Mobile is true 40-column mode: reflow, never clip.
+PATH: status bar -> title art pours in -> numbered menu is the nav -> each screen is a framed panel -> file area is the download CTA.
+SIGNATURE: number keys 1-6 jump screens; "1 CALLER ONLINE: YOU — there is no central server to be online on."
+RISK: retro-terminal register; held honest by real claims, real tables, zero decoration outside the grammar.
+-->
+<a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="topbar">
-    <div class="wrap topbar-row">
-      <a class="brand" href="#hero" aria-label="Jochona home">
-        <img src="/assets/brand/logo-mark-light.webp" alt="" width="34" height="34" />
-        <span>Jochona</span>
-      </a>
+<header class="bar bar--top" role="banner">
+  <span><b>JOCHONA</b> · jochona.com</span>
+  <span class="bar-mid" aria-hidden="true">ANSI: ON</span>
+  <span>NODE 1 OF 1<span class="hide-sm"> · 2400 8N1</span></span>
+</header>
 
-      <nav aria-label="Primary navigation">
-        <ul class="nav-links" id="primary-nav">
-          <li><a href="#connect">How it connects</a></li>
-          <li><a href="#local-first">Local-first</a></li>
-          <li><a href="#platforms">Platforms</a></li>
-          <li><a href="#roadmap">Roadmap</a></li>
-          <li><a href="#get-it">Builds</a></li>
-        </ul>
+<main id="main" class="term">
+  <h1 class="sr-only">Jochona — stream the games already on your PC, from the Sunshine, Apollo, or Vibepollo host you run yourself</h1>
+
+  <section class="screen screen--hero" aria-label="Welcome">
+    <pre class="art w80" aria-hidden="true"><span class="line" style="--d:1"> <span class="c">╔════════════════════════════════════════════════════════════════════════╗</span></span>
+<span class="line" style="--d:2"> <span class="c">║</span><span class="C">   ▐█▌ ▄██▄ ▄██▄ █  █ ▄██▄ █▄ █ ▄██▄                                    </span><span class="c">║</span></span>
+<span class="line" style="--d:3"> <span class="c">║</span><span class="C">    █  █  █ █    █▄▄█ █  █ █▀▄█ █▄▄█                                    </span><span class="c">║</span></span>
+<span class="line" style="--d:4"> <span class="c">║</span><span class="C"> █▄▄█  ▀██▀ ▀██▀ █  █ ▀██▀ █ ▀█ █  █ </span><span class="m">░▒▓</span><span class="M"> moonlight, in Bengali</span>          <span class="c">║</span></span>
+<span class="line" style="--d:5"> <span class="c">╚════════════════════════════════════════════════════════════════════════╝</span></span></pre>
+    <pre class="art w40" aria-hidden="true"><span class="line" style="--d:1"><span class="c">╔══════════════════════════════════════╗</span></span>
+<span class="line" style="--d:2"><span class="c">║</span><span class="C">  ▐█▌ ▄██▄ ▄██▄ █  █ ▄██▄ █▄ █ ▄██▄   </span><span class="c">║</span></span>
+<span class="line" style="--d:3"><span class="c">║</span><span class="C">   █  █  █ █    █▄▄█ █  █ █▀▄█ █▄▄█   </span><span class="c">║</span></span>
+<span class="line" style="--d:4"><span class="c">║</span><span class="C">█▄▄█  ▀██▀ ▀██▀ █  █ ▀██▀ █ ▀█ █  █   </span><span class="c">║</span></span>
+<span class="line" style="--d:5"><span class="c">║</span><span class="m"> ░▒▓</span><span class="M"> moonlight, in Bengali</span>            <span class="c">║</span></span>
+<span class="line" style="--d:6"><span class="c">╚══════════════════════════════════════╝</span></span></pre>
+
+    <pre class="w80"><span class="line" style="--d:7"><span class="g"> CONNECT</span>  your device ──────────────▸ the gaming PC you already own.</span>
+<span class="line" style="--d:8">          A streaming client for <span class="W">Sunshine · Apollo · Vibepollo</span> hosts.</span>
+<span class="line" style="--d:9">          Your board, your hardware: <span class="C">no Jochona account, no Jochona cloud.</span></span></pre>
+    <pre class="w40"><span class="line" style="--d:7"><span class="g">CONNECT</span> your device ──▸ your own PC.</span>
+<span class="line" style="--d:8">A streaming client for the <span class="W">Sunshine,</span></span>
+<span class="line" style="--d:8"><span class="W">Apollo, and Vibepollo</span> hosts you run.</span>
+<span class="line" style="--d:9"><span class="C">No Jochona account, no Jochona cloud.</span></span></pre>
+
+    <div class="hero-panels line" style="--d:10">
+      <nav class="panel" aria-label="Board menu">
+        <h2 class="phead">[ MAIN MENU ]</h2>
+        <pre class="w80"><a href="#what"> <span class="y">[1]</span> <span class="W">WHAT IT IS</span> <span class="c">.......</span> stream the games already on your PC <span class="c">»</span></a>
+<a href="#platforms"> <span class="y">[2]</span> <span class="W">PLATFORMS</span> <span class="c">........</span> Windows · macOS · Linux · handhelds <span class="c">»</span></a>
+<a href="#controller"> <span class="y">[3]</span> <span class="W">CONTROLLER</span> <span class="c">.......</span> every workflow works from the couch <span class="c">»</span></a>
+<a href="#local"> <span class="y">[4]</span> <span class="W">LOCAL-FIRST</span> <span class="c">......</span> pairing secrets live in your OS vault <span class="c">»</span></a>
+<a href="#builds"> <span class="y">[5]</span> <span class="W">BUILDS</span> <span class="c">...........</span> dev builds on GitHub, updated often <span class="c">»</span></a>
+<a href="#roadmap"> <span class="y">[6]</span> <span class="W">COMING UP</span> <span class="c">........</span> what lands by 1.0, and what's later <span class="c">»</span></a></pre>
+        <pre class="w40"><a href="#what"><span class="y">[1]</span> <span class="W">WHAT IT IS</span>
+    <span class="c">the games already on your PC</span></a>
+<a href="#platforms"><span class="y">[2]</span> <span class="W">PLATFORMS</span>
+    <span class="c">Win · macOS · Linux · Deck</span></a>
+<a href="#controller"><span class="y">[3]</span> <span class="W">CONTROLLER</span>
+    <span class="c">every workflow, from the couch</span></a>
+<a href="#local"><span class="y">[4]</span> <span class="W">LOCAL-FIRST</span>
+    <span class="c">secrets in your OS vault</span></a>
+<a href="#builds"><span class="y">[5]</span> <span class="W">BUILDS</span>
+    <span class="c">dev builds on GitHub</span></a>
+<a href="#roadmap"><span class="y">[6]</span> <span class="W">COMING UP</span>
+    <span class="c">by 1.0, and later</span></a></pre>
       </nav>
 
-      <div class="nav-actions">
-        <a class="text-link nav-github" href="https://github.com/Jochona/jochona-client">GitHub</a>
-        <a class="btn btn--primary nav-build" href="#get-it">Get development builds</a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
-          <span>Menu</span>
-          <svg viewBox="0 0 18 18" aria-hidden="true">
-            <path d="M2 5.25h14M2 12.75h14" />
-          </svg>
-        </button>
-      </div>
+      <aside class="panel panel--info" aria-label="System info">
+        <h2 class="phead">[ SYSTEM INFO ]</h2>
+        <dl class="kv">
+          <div><dt>HOSTS</dt><dd>Sunshine · Apollo · Vibepollo</dd></div>
+          <div><dt>ACCOUNTS</dt><dd>none, ever</dd></div>
+          <div><dt>JOCHONA RELAYS</dt><dd>none exist</dd></div>
+          <div><dt>SECRETS</dt><dd>your OS vault</dd></div>
+          <div><dt>LICENSE</dt><dd>GPL-3.0 · Moonlight fork</dd></div>
+          <div><dt>STATUS</dt><dd><span class="g">●</span> dev builds</dd></div>
+        </dl>
+        <a class="btn" href="https://github.com/Jochona/jochona-client">[ GET DEV BUILDS ]</a>
+      </aside>
     </div>
-  </header>
 
-  <main id="main">
-    <section class="hero" id="hero" aria-labelledby="hero-title">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <h1 id="hero-title">Your games are already on your&nbsp;PC.</h1>
-          <p class="lede">
-            Jochona gets you to them from the couch, the desk, or a Steam Deck.
-            The stream runs over your own network, and no Jochona service sits in the middle. It's a streaming
-            client for the Sunshine, Apollo, and Vibepollo hosts you already run.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn--primary" href="https://github.com/Jochona/jochona-client">
-              Get development builds
-              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" /></svg>
-            </a>
-            <a class="btn btn--secondary" href="#connect">See how it connects</a>
-          </div>
-          <p class="release-note">
-            <span class="status-dot" aria-hidden="true"></span>
-            In active development · no tagged release yet
-          </p>
-        </div>
+    <p class="caller line" style="--d:11"><span class="g">●</span> 1 CALLER ONLINE: <span class="W">YOU</span> — there is no central server to be online on.</p>
 
-        <figure class="direct-visual" aria-labelledby="connection-caption">
-          <picture class="visual-backdrop" aria-hidden="true">
-            <source srcset="/assets/brand/hero-wide.webp" type="image/webp" />
-            <img src="/assets/brand/hero-wide.png" alt="" />
-          </picture>
-          <canvas class="signal-field" data-signal-field aria-hidden="true"></canvas>
-          <svg class="connection-diagram" viewBox="0 0 1000 620" role="img" aria-labelledby="connection-title connection-desc">
-            <title id="connection-title">A connection from your device to your host PC</title>
-            <desc id="connection-desc">A single straight signal line joins a handheld device to a host computer over your own LAN or a private overlay.</desc>
-            <defs>
-              <filter id="beam-glow" x="-20%" y="-80%" width="140%" height="260%">
-                <feGaussianBlur stdDeviation="11" result="blur" />
-                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
-            </defs>
-
-            <line class="beam beam--glow" x1="197" y1="445" x2="803" y2="175" />
-            <line class="beam beam--track" x1="197" y1="445" x2="803" y2="175" />
-            <line class="beam beam--core" x1="197" y1="445" x2="803" y2="175" />
-
-            <g class="route-label route-label--full" transform="translate(500 310) rotate(-24)">
-              <rect x="-122" y="-18" width="244" height="36" />
-              <text x="0" y="4.5" text-anchor="middle">LAN / PRIVATE OVERLAY</text>
-            </g>
-            <g class="route-label route-label--compact" transform="translate(500 310) rotate(-24)">
-              <rect x="-120" y="-26" width="240" height="52" />
-              <text x="0" y="10" text-anchor="middle">YOUR NETWORK</text>
-            </g>
-
-            <g class="endpoint endpoint--device" transform="translate(140 470)">
-              <circle class="endpoint-ring" r="53" />
-              <circle class="endpoint-pulse" r="38" />
-              <g class="endpoint-icon" transform="translate(-25 -17)">
-                <rect x="0" y="0" width="50" height="34" rx="6" />
-                <path d="M8 17h12M14 11v12M35 13h.1M41 20h.1" />
-              </g>
-              <text class="endpoint-name" x="-53" y="90">YOUR DEVICE</text>
-              <text class="endpoint-detail" x="-53" y="112">Windows · macOS · Linux · Deck</text>
-            </g>
-
-            <g class="endpoint endpoint--host" transform="translate(860 150)">
-              <circle class="endpoint-ring" r="53" />
-              <circle class="endpoint-pulse" r="38" />
-              <g class="endpoint-icon" transform="translate(-25 -24)">
-                <rect x="0" y="0" width="50" height="34" rx="3" />
-                <path d="M12 45h26M18 34v11M32 34v11" />
-                <circle cx="42" cy="8" r="2" />
-              </g>
-              <text class="endpoint-name host-label--full" x="53" y="92" text-anchor="end">YOUR HOST</text>
-              <text class="endpoint-detail host-label--full" x="53" y="114" text-anchor="end">Sunshine · Apollo · Vibepollo</text>
-              <text class="endpoint-name host-label--compact" x="53" y="-104" text-anchor="end">YOUR HOST</text>
-              <text class="endpoint-detail host-label--compact" x="53" y="-70" text-anchor="end">Sunshine · Apollo · Vibepollo</text>
-            </g>
-          </svg>
-          <figcaption id="connection-caption">
-            <span>Direct by default</span>
-            <span>Never through a Jochona server</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="wrap truth-strip" aria-label="Jochona essentials">
-        <p>No account to create</p>
-        <p>No Jochona cloud in the middle</p>
-        <p>Knows what your host can do</p>
-        <p>Works from a controller</p>
-      </div>
-    </section>
-
-    <section class="connect section" id="connect" aria-labelledby="connect-title">
-      <div class="wrap">
-        <div class="section-heading">
-          <div>
-            <h2 id="connect-title">The whole route is yours.</h2>
-            <p>There are only three pieces: the screen in your hands, the network in your house, and the PC doing the heavy lifting. Jochona keeps them talking directly and stays out of the way.</p>
-          </div>
-          <p class="section-bearing" aria-hidden="true">DEVICE → NETWORK → HOST</p>
-        </div>
-
-        <div class="course-track">
-          <article class="course-stop">
-            <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48"><rect x="5" y="10" width="38" height="28" rx="5" /><path d="M12 24h10M17 19v10M31 21h.1M36 27h.1" /></svg>
-            </div>
-            <h3>Your device</h3>
-            <p>Windows, macOS, Linux, a Steam Deck, or a Windows handheld like the ROG Ally. Everything works from a controller on the couch; a keyboard is welcome, never required.</p>
-            <span class="course-meta">DESK · COUCH · HANDHELD</span>
-          </article>
-
-          <article class="course-stop">
-            <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48"><circle cx="10" cy="24" r="4" /><circle cx="38" cy="14" r="4" /><circle cx="38" cy="34" r="4" /><path d="M14 23l20-8M14 25l20 8" /></svg>
-            </div>
-            <h3>Your network</h3>
-            <p>Stay on your LAN, or reach home through a private overlay like Tailscale. On the LAN the path is direct; over the overlay it stays end-to-end encrypted, and it never touches a Jochona server.</p>
-            <span class="course-meta">LAN · PRIVATE OVERLAY</span>
-          </article>
-
-          <article class="course-stop">
-            <div class="course-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48"><rect x="7" y="7" width="34" height="24" rx="3" /><path d="M15 41h18M19 31v10M29 31v10" /><circle cx="35" cy="13" r="2" /></svg>
-            </div>
-            <h3>Your host</h3>
-            <p>Sunshine, Apollo, or Vibepollo. Jochona asks the host what it can actually do and shows you those controls, instead of guessing from a version number.</p>
-            <span class="course-meta">CAPABILITY-AWARE</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="local-first section" id="local-first" aria-labelledby="local-title">
-      <div class="wrap local-grid">
-        <div class="local-copy">
-          <h2 id="local-title">There's nothing in the middle.</h2>
-          <p class="local-lede">There's no Jochona account, no Jochona relay, and no Jochona server your stream could detour through. We didn't build any of them, on purpose.</p>
-          <p>Your pairings stay on your device, and credentials go in the vault your operating system already guards. Never a config file, never plain text.</p>
-
-          <dl class="vault-list">
-            <div><dt>macOS</dt><dd>Keychain</dd></div>
-            <div><dt>Windows</dt><dd>DPAPI</dd></div>
-            <div><dt>Linux</dt><dd>libsecret</dd></div>
-          </dl>
-
-          <ul class="habit-list">
-            <li>
-              <h3>Good defaults, visible controls.</h3>
-              <p>Sensible settings arrive ready, and every one of them stays reachable when you want something different.</p>
-            </li>
-            <li>
-              <h3>Built to recover, not just fail.</h3>
-              <p>When something breaks, diagnostics name the likely cause and point at the next useful step, not just an error code.</p>
-            </li>
-          </ul>
-        </div>
-
-        <aside class="identity-stop" aria-label="Host identity protection">
-          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4 54 13v16c0 14-8.8 25.7-22 31C18.8 54.7 10 43 10 29V13L32 4Z" /><path d="m22 32 7 7 14-16" /></svg>
-          <p class="identity-label">HOST IDENTITY CHANGED</p>
-          <h3>If your host changes, Jochona stops and asks.</h3>
-          <p>A reinstalled host, or a different machine answering at the same address, is blocked until you deliberately re-pair. Nothing gets trusted quietly.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="platforms section section--band" id="platforms" aria-labelledby="platforms-title">
-      <div class="wrap">
-        <div class="band-heading">
-          <h2 id="platforms-title">Builds for the machines you already own.</h2>
-        </div>
-
-        <div class="platform-rail">
-          <article class="platform-stop">
-            <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 5l14-2v15H4V5Zm18-2 14-2v17H22V3ZM4 22h14v15L4 35V22Zm18 0h14v17l-14-2V22Z" /></svg>
-            <div><h3>Windows</h3><p>11 · x64 · ROG Ally</p></div>
-          </article>
-          <article class="platform-stop">
-            <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="7" y="7" width="26" height="26" rx="4" /><path d="M14 7V2M26 7V2M14 38v-5M26 38v-5M7 14H2M7 26H2M38 14h-5M38 26h-5" /></svg>
-            <div><h3>macOS</h3><p>14+ · Apple Silicon</p></div>
-          </article>
-          <article class="platform-stop">
-            <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="7" width="34" height="26" rx="3" /><path d="m11 15 6 5-6 5M20 27h9" /></svg>
-            <div><h3>Linux</h3><p>x86-64 · Flatpak / AppImage</p></div>
-          </article>
-          <article class="platform-stop">
-            <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="11" width="34" height="20" rx="9" /><circle cx="12" cy="21" r="4" /><circle cx="28" cy="21" r="4" /><circle cx="31" cy="15" r="1" /><circle cx="33" cy="26" r="1" /></svg>
-            <div><h3>Steam Deck</h3><p>Handheld · docked</p></div>
-          </article>
-        </div>
-
-        <p class="rail-note" aria-label="Supported controller families">CONTROLLER-FIRST · XBOX · DUALSHOCK 4 · DUALSENSE · STEAM DECK · ROG ALLY</p>
-      </div>
-    </section>
-
-    <section class="roadmap section section--band" id="roadmap" aria-labelledby="roadmap-title">
-      <div class="wrap">
-        <div class="band-heading">
-          <h2 id="roadmap-title">Where this is headed.</h2>
-        </div>
-
-        <div class="roadmap-grid">
-          <div class="roadmap-col">
-            <h3>By 1.0</h3>
-            <p>One library across every host you pair, per-game streaming profiles, and certified end-to-end paths for 4K 120&nbsp;Hz HDR with AV1 where the whole hardware chain supports it.</p>
-          </div>
-          <div class="roadmap-col">
-            <h3>Planned for later</h3>
-            <p>A self-hosted companion service for remote wake, trusted-friend access, and an optional relay when a direct path fails. Everything stays open source and self-hostable, and a Jochona account never becomes mandatory.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="downloads section" id="get-it" aria-labelledby="downloads-title">
-      <div class="wrap downloads-panel">
-        <div class="downloads-backdrop" aria-hidden="true"></div>
-        <div class="downloads-copy">
-          <h2 id="downloads-title">Help shape it before 1.0.</h2>
-          <p>Jochona is being built in the open and hasn't tagged a release yet. Watch the repository, read the code, or grab a fresh CI build and tell us what breaks.</p>
-        </div>
-        <div class="downloads-actions">
-          <a class="btn btn--primary" href="https://github.com/Jochona/jochona-client">
-            View the repository
-            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" /></svg>
-          </a>
-          <a class="btn btn--secondary" href="https://github.com/Jochona/jochona-client/actions">Browse CI builds</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <div class="footer-brand">
-        <a class="brand" href="#hero"><img src="/assets/brand/logo-mark-light.webp" alt="" width="32" height="32" /><span>Jochona</span></a>
-        <p>Game streaming for hardware you own.</p>
-      </div>
-      <p class="footer-attrib">
-        Jochona means moonlight in Bengali. The client is derived from <a href="https://github.com/moonlight-stream/moonlight-qt">Moonlight Qt</a> and licensed under <a href="https://github.com/Jochona/jochona-client/blob/main/LICENSE">GPL-3.0</a>, with full upstream history preserved.
-      </p>
-      <ul class="footer-links">
-        <li><a href="https://jochona.com">jochona.com</a></li>
-        <li><a href="https://github.com/Jochona/jochona-client">GitHub</a></li>
-      </ul>
+    <div class="prompt line" style="--d:12">
+      <span class="y">SELECT:</span><span class="cursor" aria-hidden="true"></span>
+      <span class="hint" aria-hidden="true">press 1–6, or scroll</span>
     </div>
-  </footer>
+  </section>
 
-  <script src="/app.js"></script>
+  <section class="screen panel" id="what" aria-labelledby="what-title">
+    <h2 class="phead" id="what-title">[ 1 · WHAT IT IS ]</h2>
+    <p>You already own a gaming PC. Jochona gets you to it from the couch, the desk, or a handheld: it streams video and audio down, and sends your controller back, over your own network.</p>
+    <pre class="diagram w80" aria-hidden="true">
+ ┌──────────────┐                                       ┌──────────────┐
+ │ <span class="W">YOUR DEVICE</span>  │ <span class="c">◂══ VIDEO · H.264 / HEVC / AV1 ══════</span> │ <span class="W">YOUR HOST PC</span> │
+ │              │ <span class="c">◂══ AUDIO · stereo / surround ═══════</span> │              │
+ │ couch · desk │ <span class="c">══▸ INPUT · pad / kb / mouse ════════▸</span> │ Sunshine     │
+ │ · handheld   │                                       │ Apollo       │
+ └──────────────┘   <span class="y">your LAN, or your private overlay</span>   │ Vibepollo    │
+                                                        └──────────────┘</pre>
+    <pre class="diagram w40" aria-hidden="true">
+ ┌─────────────────┐
+ │   <span class="W">YOUR DEVICE</span>   │
+ └───────┬─────────┘
+   <span class="c">video ▴ audio ▴</span>
+   <span class="c">input ▾</span>
+   <span class="y">LAN · overlay</span>
+ ┌───────┴─────────┐
+ │  <span class="W">YOUR HOST PC</span>   │
+ │ Sunshine·Apollo │
+ │    Vibepollo    │
+ └─────────────────┘</pre>
+    <p>On the LAN the path is direct. Through a private overlay like Tailscale it stays end-to-end encrypted. Either way it never touches a Jochona server — we didn't build one, on purpose.</p>
+    <p class="dim">Host features are capability-aware: Jochona surfaces what your host actually reports, and nothing it doesn't.</p>
+  </section>
+
+  <section class="screen panel" id="platforms" aria-labelledby="platforms-title">
+    <h2 class="phead" id="platforms-title">[ 2 · PLATFORMS ]</h2>
+    <table>
+      <thead><tr><th scope="col">PLATFORM</th><th scope="col">PACKAGE</th><th scope="col">STATUS</th></tr></thead>
+      <tbody>
+        <tr><td class="W">WINDOWS</td><td>11 · x64 · installer / portable · ROG Ally</td><td class="g">dev build</td></tr>
+        <tr><td class="W">MACOS</td><td>14+ · DMG · Apple Silicon</td><td class="g">dev build</td></tr>
+        <tr><td class="W">LINUX</td><td>x86-64 · Flatpak / AppImage</td><td class="g">dev build</td></tr>
+        <tr><td class="W">STEAM DECK</td><td>handheld · docked</td><td class="g">dev build</td></tr>
+      </tbody>
+    </table>
+    <p class="dim">CONTROLLERS: Xbox · DualShock 4 · DualSense · Steam Deck · ROG Ally</p>
+  </section>
+
+  <section class="screen panel" id="controller" aria-labelledby="controller-title">
+    <h2 class="phead" id="controller-title">[ 3 · CONTROLLER ]</h2>
+    <p>Every ordinary workflow is designed to finish without touching a keyboard:</p>
+    <dl class="steps">
+      <div><dt><span class="y">&gt;</span> pair with a host</dt><dd>PIN on the TV, confirmed with the pad</dd></div>
+      <div><dt><span class="y">&gt;</span> browse your games</dt><dd>D-pad-first navigation, deterministic focus</dd></div>
+      <div><dt><span class="y">&gt;</span> launch and play</dt><dd>in-session overlay for volume, stats, disconnect</dd></div>
+      <div><dt><span class="y">&gt;</span> drop and resume</dt><dd>fast reconnect after Wi-Fi blips or suspend</dd></div>
+    </dl>
+    <p class="dim">A keyboard and mouse stay welcome, low-latency, and first-class. They're just never required.</p>
+  </section>
+
+  <section class="screen panel" id="local" aria-labelledby="local-title">
+    <h2 class="phead" id="local-title">[ 4 · LOCAL-FIRST ]</h2>
+    <p>Your pairings stay on your device, and credentials go in the vault your operating system already guards. Never a config file, never plain text.</p>
+    <dl class="kv kv--wide">
+      <div><dt>WINDOWS</dt><dd>Credential Manager / DPAPI</dd></div>
+      <div><dt>MACOS</dt><dd>Keychain</dd></div>
+      <div><dt>LINUX</dt><dd>Secret Service</dd></div>
+    </dl>
+    <div class="sysmsg" role="note">
+      <p class="sysmsg-head"><span aria-hidden="true">▓▒░</span> SYSTEM MESSAGE <span aria-hidden="true">░▒▓</span></p>
+      <p><b>HOST IDENTITY CHANGED.</b> A reinstalled host, or a different machine answering at the same address, is blocked until you deliberately re-pair. Nothing gets trusted quietly.</p>
+    </div>
+  </section>
+
+  <section class="screen panel" id="builds" aria-labelledby="builds-title">
+    <h2 class="phead" id="builds-title">[ 5 · BUILDS ]</h2>
+    <p class="dim">FILE AREA /builds — in active development · no tagged release yet</p>
+    <table>
+      <thead><tr><th scope="col">FILE</th><th scope="col">CONTENTS</th></tr></thead>
+      <tbody>
+        <tr><td class="W">jochona-win-x64</td><td>installer + portable build</td></tr>
+        <tr><td class="W">jochona-macos</td><td>DMG, Apple Silicon</td></tr>
+        <tr><td class="W">jochona-linux</td><td>Flatpak / AppImage</td></tr>
+      </tbody>
+    </table>
+    <p class="dl-row">
+      <a class="btn btn--big" href="https://github.com/Jochona/jochona-client">[ ENTER ] DOWNLOAD FROM GITHUB</a>
+    </p>
+  </section>
+
+  <section class="screen panel" id="roadmap" aria-labelledby="roadmap-title">
+    <h2 class="phead" id="roadmap-title">[ 6 · COMING UP ]</h2>
+    <div class="posts">
+      <article>
+        <h3><span class="m">POST #47</span> · BY 1.0</h3>
+        <p>A unified library across your hosts, per-game streaming profiles, and the certification target: 4K 120 Hz HDR with AV1, where the complete hardware path supports it.</p>
+      </article>
+      <article>
+        <h3><span class="m">POST #48</span> · PLANNED FOR LATER</h3>
+        <p>A self-hosted companion service for remote wake and trusted-friend access, plus an optional self-hosted relay for when a direct path fails. All of it open source. A Jochona account never becomes mandatory.</p>
+      </article>
+    </div>
+  </section>
+
+  <p class="attrib">
+    Jochona means moonlight in Bengali. The client is derived from
+    <a href="https://github.com/moonlight-stream/moonlight-qt">Moonlight Qt</a> and licensed under
+    <a href="https://github.com/Jochona/jochona-client/blob/main/LICENSE">GPL-3.0</a>, with full upstream history preserved.
+  </p>
+</main>
+
+<footer class="bar bar--bottom" role="contentinfo">
+  <span>GPL-3.0 · <a href="https://github.com/Jochona/jochona-client">github.com/Jochona</a></span>
+  <span class="hide-sm">KEYS 1–6 JUMP · ESC TOP</span>
+</footer>
+
+<script src="/app.js?v=20260827"></script>
 </body>
 </html>
