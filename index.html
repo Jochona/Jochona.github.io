@@ -242,7 +242,7 @@
         <div class="section-heading">
           <div>
             <h2 id="constellation-title">It isn't that nothing sits in the middle. It's that you can own all of it.</h2>
-            <p>Rented clouds solve real problems: waking a distant PC, identity, friends, awkward NATs. Jochona solves the same problems with pieces you host yourself. The client exists today; the rest is designed and named, and every piece will be open source.</p>
+            <p>Identity, power control, trusted access, remote wake, and difficult routes all remain owner problems. Jochona plans self-hosted pieces for that work. Client and Host are in development; Constellation and Beacon are planned.</p>
           </div>
           <p class="section-bearing" aria-hidden="true">CLIENT · HOST · CONSTELLATION · BEACON</p>
         </div>
@@ -267,7 +267,7 @@
               <h3>Jochona Constellation</h3>
               <span class="svc-status">PLANNED</span>
             </div>
-            <p>The whole management plane, named for what it does: it arranges every machine you can stream to into one picture. Identity, trusted friends, host presence, and wake; home PCs and rented gaming VMs as a single fleet, honest about where each machine stands: start or wake requested, machine booting, host reachable, streaming ready. Constellation starts a cloud VM when you sit down and shuts it down when you leave, so idle hours cost nothing, and friends only ever launch on terms you approve. When no direct path exists, it can stand up a relay on a publicly reachable node you give it, since a relay behind your own NAT helps nobody: bandwidth-governed, observable, and never able to grant access on its own.</p>
+            <p>The planned management plane for one owner-controlled Organization. Its first experimental slice will register existing Proxmox QEMU gaming VMs, show separate power, Host, Session, and route evidence, and start or gracefully stop each VM. A stopped VM can still incur storage, backup, network, license, or hardware costs. Later slices add Beacon wake, Owner-approved friend Grants, and an allocation-bound Relay that cannot grant access.</p>
           </li>
           <li>
             <div class="svc-name">
@@ -313,7 +313,7 @@
               </tr>
               <tr>
                 <th scope="row">Ownership</th>
-                <td><b>GPL-3.0.</b> No required Jochona account; the planned services stay self-hosted.</td>
+                <td><b>Open source throughout.</b> Client and Host use GPL-3.0; planned Constellation uses AGPL-3.0. No required Jochona account.</td>
                 <td><b>GPL-3.0 on both sides.</b> No vendor account; local host setup and pairing.</td>
                 <td><b>GPL-3.0 host.</b> Local session auth and scoped API tokens; pair it with a Moonlight-family client.</td>
                 <td><b>Proprietary.</b> Steam-account-centered, with guest invitations for Remote Play Together.</td>
@@ -340,22 +340,22 @@
                 <td><b>Complexity hidden.</b> Tuned defaults and controller layouts favor quick setup over host-level control.</td>
               </tr>
               <tr>
-                <th scope="row">Fleet + cloud VMs</th>
-                <td><b>Planned as one fleet.</b> Home PCs and rented VMs with start/stop, readiness states, and idle-cost control.</td>
+                <th scope="row">Fleet + VM power</th>
+                <td><b>Planned, Proxmox first.</b> Register existing QEMU gaming VMs, start them on demand, and stop them gracefully after an idle grace. Provisioning is outside the first slice, and stopped VMs can retain costs.</td>
                 <td><b>Bring your own orchestration.</b> It can stream from a cloud gaming server; VM lifecycle and cross-host state live elsewhere.</td>
                 <td><b>Excellent per host.</b> Cross-host fleet state and cloud-provider lifecycle live elsewhere.</td>
                 <td><b>Outside Remote Play's job.</b> It streams from computers running Steam, not a provisioned VM fleet.</td>
               </tr>
               <tr>
                 <th scope="row">Friends</th>
-                <td><b>Planned, owner-approved access.</b> Time-bounded invitations without making a Jochona account mandatory.</td>
+                <td><b>Planned, Owner-approved access.</b> Signed one-use invitations and scoped Grants without a global Jochona account.</td>
                 <td><b>Device-to-host pairing.</b> Friend identity, invitations, and revocation are DIY.</td>
                 <td><b>Host-local policy.</b> Session auth and scoped tokens help automation; friend access remains your setup.</td>
                 <td><b>Best integrated today.</b> Friends List and Remote Play Together share controllers, keyboard, mouse, audio, and voice.</td>
               </tr>
               <tr>
                 <th scope="row">Beyond the LAN</th>
-                <td><b>Direct first.</b> Beacon is planned for wake and annunciation; a publicly reachable Constellation node can relay as a last resort.</td>
+                <td><b>Direct first.</b> Beacon wake is the second planned slice. A separate, allocation-bound Constellation Relay role is the last-resort path.</td>
                 <td><b>Your route, your setup.</b> Port forwarding, IPv6, or an SDN/VPN; discovery and wake depend on the network.</td>
                 <td><b>The same GameStream routes.</b> Host recovery is rich; network path, remote discovery, and wake remain your setup.</td>
                 <td><b>Inside Steam's ecosystem.</b> Valve handles the connection experience; there is no self-hosted management plane.</td>

@@ -30,10 +30,10 @@ it, without overstating its maturity.
 
 ## Positioning
 
-Capability-driven, local-first streaming: no accounts, no cloud dependency,
-secrets held in the OS credential vault, host features surfaced only when the
-connected host actually supports them (Sunshine baseline, Apollo probe
-fields, Vibepollo's declarative capability endpoint).
+Capability-driven, local-first streaming. The Client does not require an
+account or managed cloud service. Planned Constellation remains owner-hosted
+and does not require a global Jochona account. Host controls appear only when
+the connected Host supports them.
 
 ## Operating Context
 
@@ -51,8 +51,14 @@ client repository; GitHub Releases will host stable builds once they exist.
 - Wake-on-LAN, including recovery from a stale cached MAC address.
 - Multi-host support with capability-awareness across Sunshine, Apollo, and
   Vibepollo.
-- No accounts, no cloud relay; secrets live only in the OS credential store
-  (Keychain / DPAPI / libsecret), never on disk in plaintext.
+- No required Jochona account or Jochona-operated Relay. Client secrets live
+  only in the OS credential store (Keychain / DPAPI / libsecret), never in
+  plaintext on disk.
+- Planned Constellation starts with existing, owner-managed Proxmox QEMU VMs.
+  It manages power but does not provision infrastructure or remove residual
+  storage, backup, network, license, or hardware costs.
+- Later planned slices add Beacon, Owner-approved friend Grants, and a
+  separately deployed allocation-bound Constellation Relay.
 - Host identity change hard-blocks streaming until the user deliberately
   re-pairs — no silent continue.
 - GPL-3.0, derived from Moonlight Qt with full upstream history preserved;
@@ -72,15 +78,17 @@ direct, names the action.
 - `assets/brand/`: app-icon.png, hero-wide.png, logo-mark.png,
   logo-mark-light.png — real tracked brand assets, copied from the client
   repo.
-- Client repo `PRODUCT.md` and `proposal.md` — source of truth for feature
-  claims used on this page.
+- Client `PRODUCT.md` and `proposal.md` are sources for Client claims.
+- Sibling Constellation `CONTEXT.md`, architecture, implementation plan, and
+  ADRs are sources for planned management-plane claims.
 - Absences: no telemetry data, no user testimonials, no benchmark numbers, no
   release builds yet — never fabricate any of these.
 
 ## Product Principles
 
 1. Say only what's true today; the product is pre-release, not finished.
-2. Local ownership: no account, no cloud dependency, secrets in the OS vault.
+2. Local ownership: no mandatory Jochona account or operator service; owners
+   supply infrastructure and control keys.
 3. Controller-first, not controller-only.
 4. Capability-driven, never product-name-driven.
 5. Attribute upstream honestly and visibly (GPL-3.0, Moonlight Qt).
