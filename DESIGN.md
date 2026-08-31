@@ -244,8 +244,9 @@ The service roster (Constellation is also the control-plane service's proper
 name): a hairline-divided two-column list (name + status on the
 left, one honest paragraph on the right). Status readouts are diegetic mono
 labels — brass for IN DEVELOPMENT, caption ink for PLANNED. Claims about
-planned services stay in the future tense and sit under a lede that says
-plainly only the client exists today.
+the still-planned Constellation stay in the future tense and sit under a
+lede that says plainly Client, Host, and Beacon are in development and
+Constellation is the piece still ahead.
 
 ## Motion
 

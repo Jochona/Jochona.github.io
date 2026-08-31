@@ -57,7 +57,10 @@ client repository; GitHub Releases will host stable builds once they exist.
 - Planned Constellation starts with existing, owner-managed Proxmox QEMU VMs.
   It manages power but does not provision infrastructure or remove residual
   storage, backup, network, license, or hardware costs.
-- Later planned slices add Beacon, Owner-approved friend Grants, and a
+- Jochona Beacon is implemented as a standalone, self-hosted Linux daemon
+  (github.com/Jochona/jochona-beacon) that pairs with the Client and wakes
+  hosts an overlay can't reach. Later planned Constellation slices add
+  Beacon enrollment and Wake Tickets, Owner-approved friend Grants, and a
   separately deployed allocation-bound Constellation Relay.
 - Host identity change hard-blocks streaming until the user deliberately
   re-pairs — no silent continue.

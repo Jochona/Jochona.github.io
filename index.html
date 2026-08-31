@@ -213,7 +213,7 @@
               <tr>
                 <th scope="row">Tailscale · NetBird</th>
                 <td><b>Great.</b> An encrypted WireGuard tunnel, straight to your host.</td>
-                <td><b>Manual entry.</b> The tunnel doesn't carry the multicast that discovery listens for. Beacon will announce your hosts across it once it lands.</td>
+                <td><b>Manual entry.</b> The tunnel doesn't carry the mDNS multicast that discovery listens for. Once you've paired a Beacon, the Client fetches its authenticated host list directly over the tunnel's IP path instead.</td>
                 <td><b>No.</b> These are layer-3 networks, and the wake packet is a layer-2 broadcast. Beacon exists to close exactly this gap.</td>
               </tr>
               <tr>
@@ -225,15 +225,15 @@
               <tr>
                 <th scope="row">Direct internet</th>
                 <td><b>Works</b> when you deliberately open a path to your host.</td>
-                <td><b>Manual entry.</b> Same story: no multicast, so Beacon will do the announcing here too.</td>
-                <td><b>No.</b> Nothing along the way knows how to deliver a broadcast.</td>
+                <td><b>Manual entry.</b> Same story: no multicast, but a paired Beacon's host list is still one authenticated request away over the open path.</td>
+                <td><b>With setup.</b> Nothing along the way delivers a broadcast on its own, but a request to a reachable Beacon still triggers the LAN-side wake.</td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <p class="table-hint" aria-hidden="true">SLIDE FOR THE FULL TABLE →</p>
-        <p class="paths-note">One overlay gotcha Jochona plans for: pairing over Tailscale can cache the tunnel's MAC address instead of your PC's real one, which quietly breaks wake even at home. The stored MAC stays visible and editable.</p>
+        <p class="paths-note">One overlay gotcha Jochona already handles: pairing over Tailscale can cache the tunnel's MAC address instead of your PC's real one, which quietly breaks wake even at home. The Client stores that MAC as a visible, editable override you can fix yourself.</p>
       </div>
     </section>
 
@@ -242,7 +242,7 @@
         <div class="section-heading">
           <div>
             <h2 id="constellation-title">It isn't that nothing sits in the middle. It's that you can own all of it.</h2>
-            <p>Identity, power control, trusted access, remote wake, and difficult routes all remain owner problems. Jochona plans self-hosted pieces for that work. Client and Host are in development; Constellation and Beacon are planned.</p>
+            <p>Identity, power control, trusted access, remote wake, and difficult routes all remain owner problems. Jochona plans self-hosted pieces for that work. Client, Host, and Beacon are in development; Constellation is planned.</p>
           </div>
           <p class="section-bearing" aria-hidden="true">CLIENT · HOST · CONSTELLATION · BEACON</p>
         </div>
@@ -272,9 +272,9 @@
           <li>
             <div class="svc-name">
               <h3>Jochona Beacon</h3>
-              <span class="svc-status">PLANNED</span>
+              <span class="svc-status svc-status--live">IN DEVELOPMENT</span>
             </div>
-            <p>A small always-on box on your home LAN, and the network's town crier. Overlays like Tailscale can't carry the wake broadcast from far away, so Beacon sends the magic packet for you, watches your host come up, and announces what it sees; a Stream Deck panel shows your fleet and wakes a host at a keypress.</p>
+            <p>A small always-on box on your home LAN, and the network's town crier. Overlays like Tailscale can't carry the wake broadcast from far away, so Beacon sends the magic packet for you, watches your host come up, and reports what it sees to paired Clients. It's a real, open-source Linux daemon today at <a href="https://github.com/Jochona/jochona-beacon">github.com/Jochona/jochona-beacon</a>; Constellation's own Beacon enrollment, Wake Tickets, and fleet view are still planned.</p>
           </li>
         </ul>
       </div>
@@ -306,14 +306,14 @@
             <tbody>
               <tr>
                 <th scope="row">Today</th>
-                <td><b>Development builds.</b> The client is real; Jochona Host is in development; Constellation and Beacon are planned.</td>
+                <td><b>Development builds.</b> The client is real; Jochona Host and Jochona Beacon are in development; Constellation is planned.</td>
                 <td><b>Released and established.</b> Separate community client and host projects with a long operating history.</td>
                 <td><b>Released and active.</b> A fast-moving Apollo and Sunshine host fork.</td>
                 <td><b>Released and integrated.</b> Part of Steam and the Steam Link ecosystem.</td>
               </tr>
               <tr>
                 <th scope="row">Ownership</th>
-                <td><b>Open source throughout.</b> Client and Host use GPL-3.0; planned Constellation uses AGPL-3.0. No required Jochona account.</td>
+                <td><b>Open source throughout.</b> Client and Host use GPL-3.0, Beacon is dual MIT/Apache-2.0, and planned Constellation uses AGPL-3.0. No required Jochona account.</td>
                 <td><b>GPL-3.0 on both sides.</b> No vendor account; local host setup and pairing.</td>
                 <td><b>GPL-3.0 host.</b> Local session auth and scoped API tokens; pair it with a Moonlight-family client.</td>
                 <td><b>Proprietary.</b> Steam-account-centered, with guest invitations for Remote Play Together.</td>
@@ -355,7 +355,7 @@
               </tr>
               <tr>
                 <th scope="row">Beyond the LAN</th>
-                <td><b>Direct first.</b> Beacon wake is the second planned slice. A separate, allocation-bound Constellation Relay role is the last-resort path.</td>
+                <td><b>Direct first.</b> Beacon already closes the LAN-broadcast gap; Constellation's own Beacon integration is the second planned slice. A separate, allocation-bound Constellation Relay role is the last-resort path.</td>
                 <td><b>Your route, your setup.</b> Port forwarding, IPv6, or an SDN/VPN; discovery and wake depend on the network.</td>
                 <td><b>The same GameStream routes.</b> Host recovery is rich; network path, remote discovery, and wake remain your setup.</td>
                 <td><b>Inside Steam's ecosystem.</b> Valve handles the connection experience; there is no self-hosted management plane.</td>
@@ -379,8 +379,8 @@
       <div class="wrap local-grid">
         <div class="local-copy">
           <h2 id="local-title">Nothing in the middle you don't own.</h2>
-          <p class="local-lede">Today that promise is easy to audit: there is no Jochona account, relay, or server your stream could detour through, because none exist yet. When Constellation and Beacon arrive, they run on your hardware, under your rules.</p>
-          <p>Your pairings stay on your device. The bar for 1.0 puts credentials in the vault your operating system already guards, not a config file, not plain text.</p>
+          <p class="local-lede">Today that promise is easy to audit: there is no Jochona-operated account or relay, and no server sits anywhere in your stream's path. Beacon already runs today, self-hosted on your own hardware, and never touches the stream itself; Constellation is the piece still ahead.</p>
+          <p>Your pairings stay on your device. Credentials already live in the vault your operating system guards, never a config file, never plain text.</p>
 
           <dl class="vault-list">
             <div><dt>macOS</dt><dd>Keychain</dd></div>
@@ -451,7 +451,7 @@
           </div>
           <div class="roadmap-col">
             <h3>Planned for later</h3>
-            <p>The rest of the lineup. Constellation brings remote wake, trusted-friend access, cloud-VM fleets, and a last-resort relay for the rare path that can't go direct; Beacon wakes hosts your overlay can't reach and puts your fleet on a Stream Deck. All of it stays open source and self-hostable, and a Jochona account never becomes mandatory.</p>
+            <p>The rest of the lineup. Constellation is the planned owner-hosted management plane: remote wake, trusted-friend access, owner-run Proxmox VM fleets, and a last-resort relay for the rare path that can't go direct. Beacon already wakes hosts your overlay can't reach; Constellation's own Beacon enrollment and fleet view are what's still ahead. All of it stays open source and self-hostable, and a Jochona account never becomes mandatory.</p>
           </div>
         </div>
       </div>
