@@ -44,8 +44,8 @@ client repository; GitHub Releases will host stable builds once they exist.
 
 ## Capabilities and Constraints
 
-- Windows 11 x64, macOS 14+ Apple Silicon, Linux x86-64 (AppImage/Flatpak),
-  Steam Deck.
+- Windows 11 x64, macOS 14+ Apple Silicon, Linux x86-64 (AppImage; Flatpak
+  planned, not yet built), Steam Deck.
 - Controller-first navigation; every ordinary workflow is completable without
   a keyboard or mouse.
 - Wake-on-LAN, including recovery from a stale cached MAC address.
